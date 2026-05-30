@@ -266,7 +266,7 @@ export default function OemahKayuLanding() {
               </button>
             ))}
           </nav>
-          m<?               B E.D.V         {/* CTA */}
+          {/* CTA */}
           <a href={WA_URL} target="_blank" rel="noopener"
             className="hidden lg:inl
             
