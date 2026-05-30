@@ -301,25 +301,15 @@ export default function OemahKayuLanding() {
       </header>
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="bg-hero relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Atmospheric layers */}
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(ellipse at 30% 60%, #3A5A3C 0%, transparent 50%), radial-gradient(ellipse at 70% 40%, #6B5846 0%, transparent 50%)" }} />
-        <svg className="absolute bottom-0 w-full" viewBox="0 0 1440 200" preserveAspectRatio="none" style={{ height: "200px" }}>
-          <defs>
-            <linearGradient id="mtn" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#1A3020" stopOpacity="0.9"/>
-              <stop offset="100%" stopColor="#0D1A10" stopOpacity="1"/>
-            </linearGradient>
-            <linearGradient id="mtn2" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#3A5A3C" stopOpacity="0.7"/>
-              <stop offset="100%" stopColor="#1A3020" stopOpacity="0.9"/>
-            </linearGradient>
-          </defs>
-          <polygon points="0,200 200,60 400,200" fill="url(#mtn)"/>
-          <polygon points="250,200 550,20 850,200" fill="url(#mtn2)"/>
-          <polygon points="700,200 1050,40 1440,200" fill="url(#mtn)"/>
-          <polygon points="0,200 300,120 600,200 900,80 1200,200 1440,100 1440,200" fill="#0D1A10"/>
-        </svg>
+      <section
+  className="relative min-h-screen flex items-center justify-center overflow-hidden"
+  style={{
+    backgroundImage: `url(${heroImage})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
 
         {/* Content */}
         <div className="relative z-10 text-center max-w-4xl mx-auto px-6 py-32">
