@@ -27,8 +27,8 @@ export default function Navbar() {
       style={
         scrolled
           ? {
-              background: "rgba(255,255,255,0.03)",
-              boxShadow: "0 8px 32px rgba(0,0,0,0.08)",
+              background: "rgba(255, 255, 255, 0.04)",
+              boxShadow: "0 8px 32px rgba(0, 0, 0, 0.07)",
             }
           : {}
       }
