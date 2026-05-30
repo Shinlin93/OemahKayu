@@ -248,7 +248,7 @@ export default function OemahKayuLanding() {
         .border-gold { border-color: #B8962E;    }
         .bg-forest { background: #3A5A3C; }
         .text-forest { color: #3A5A3C; }
-      // `}</style> BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB?v /B/v/v/..; 
+      // `}</style>
 
       {/* ── NAVBAR ───────────────────────────────────────────────────────── */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-[#2C1A0E]/95 backdrop-blur-md py-3 shadow-lg" : "bg-transparent py-5"}`}>
@@ -283,7 +283,7 @@ export default function OemahKayuLanding() {
           </button>
         </div>
 
-        {/* Mobile Menu */} a Z           VBC
+        {/* Mobile Menu */}
         <div className={`lg:hidden bg-[#2C1A0E] transition-all duration-400 overflow-hidden ${menuOpen ? "max-h-screen py-6" : "max-h-0"}`}>
           <div className="flex flex-col items-center gap-6 px-8">
             {navLinks.map(link => (
