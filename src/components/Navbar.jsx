@@ -19,11 +19,19 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         scrolled
-          ? "bg-white/5 backdrop-blur-2xl border-b border-white/10 py-2 shadow-[0_8px_32px_rgba(0,0,0,0.15)]"
+          ? "backdrop-blur-[30px] border-b border-white/10 py-2"
           : "bg-transparent py-4"
       }`}
+      style={
+        scrolled
+          ? {
+              background: "rgba(255,255,255,0.03)",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.08)",
+            }
+          : {}
+      }
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between">
 
@@ -38,7 +46,11 @@ export default function Navbar() {
           <img
             src={logo}
             alt="Oemah Kayu Penanggungan"
-            className="h-14 w-auto object-contain drop-shadow-[0_4px_20px_rgba(0,0,0,0.6)]"
+            className="h-14 w-auto object-contain"
+            style={{
+              filter:
+                "drop-shadow(0 4px 20px rgba(0,0,0,0.55))",
+            }}
           />
         </a>
 
@@ -48,7 +60,20 @@ export default function Navbar() {
             <button
               key={link.id}
               onClick={() => handleNav(link.id)}
-              className="text-white hover:text-[#B8962E] text-xs tracking-[0.18em] uppercase font-light transition-colors duration-300 drop-shadow-md"
+              className="
+                text-white
+                hover:text-[#D4AE3A]
+                text-xs
+                tracking-[0.18em]
+                uppercase
+                font-medium
+                transition-all
+                duration-300
+              "
+              style={{
+                textShadow:
+                  "0 2px 12px rgba(0,0,0,0.7)",
+              }}
             >
               {link.label}
             </button>
@@ -63,19 +88,23 @@ export default function Navbar() {
           className="
             hidden lg:inline-flex
             items-center gap-2
-            border border-[#B8962E]
-            text-[#B8962E]
-            hover:bg-[#B8962E]
-            hover:text-[#2C1A0E]
             px-5 py-2.5
             text-xs
             tracking-[0.15em]
             uppercase
+            font-medium
+            rounded-full
             transition-all
             duration-300
-            font-medium
-            backdrop-blur-sm
+            border border-white/20
+            text-white
+            hover:bg-white/10
           "
+          style={{
+            backdropFilter: "blur(12px)",
+            textShadow:
+              "0 2px 12px rgba(0,0,0,0.5)",
+          }}
         >
           <IconWhatsApp />
           Cek Ketersediaan
@@ -83,7 +112,11 @@ export default function Navbar() {
 
         {/* Mobile Hamburger */}
         <button
-          className="lg:hidden text-white drop-shadow-md"
+          className="lg:hidden text-white"
+          style={{
+            textShadow:
+              "0 2px 12px rgba(0,0,0,0.7)",
+          }}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -93,16 +126,31 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <div
-        className={`lg:hidden backdrop-blur-xl bg-[#2C1A0E]/80 transition-all duration-500 overflow-hidden ${
+        className={`lg:hidden overflow-hidden transition-all duration-500 ${
           menuOpen ? "max-h-screen py-6" : "max-h-0"
         }`}
+        style={{
+          backdropFilter: "blur(24px)",
+          background: "rgba(20,20,20,0.35)",
+        }}
       >
         <div className="flex flex-col items-center gap-5 px-8">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => handleNav(link.id)}
-              className="text-white text-sm tracking-widest uppercase font-light border-b border-white/10 pb-4 w-full text-center"
+              className="
+                text-white
+                text-sm
+                tracking-widest
+                uppercase
+                font-light
+                border-b
+                border-white/10
+                pb-4
+                w-full
+                text-center
+              "
             >
               {link.label}
             </button>
@@ -123,6 +171,7 @@ export default function Navbar() {
               font-medium
               w-full
               justify-center
+              rounded-full
             "
           >
             <IconWhatsApp />
