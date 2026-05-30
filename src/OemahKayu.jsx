@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 import logo from "./logo.png";
+import heroImage from "./assets/HERO-OMAH.png";
 
 const LOGO_SRC = logo;
 // ─── COLOR TOKENS ───────────────────────────────────────────────────────────
