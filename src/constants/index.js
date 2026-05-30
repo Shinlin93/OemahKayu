@@ -6,7 +6,7 @@ export const WA_URL =
 export const COLORS = {
   gold:      "#B8962E",
   goldLight: "#D4AE3A",
-  darkBrown: "#2C1A0E",
+  darkBrown: "#2c1a0e1c",
   walnut:    "#6B5846",
   forest:    "#3A5A3C",
   cream:     "#F5EFE6",
