@@ -130,8 +130,9 @@ export default function Navbar() {
           menuOpen ? "max-h-screen py-6" : "max-h-0"
         }`}
         style={{
-          backdropFilter: "blur(24px)",
-          background: "rgba(20,20,20,0.35)",
+          backdropFilter: "blur(30px)",
+          background: "rgba(255, 255, 255, 0.07)",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
         }}
       >
         <div className="flex flex-col items-center gap-5 px-8">
