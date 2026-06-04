@@ -1,31 +1,39 @@
 import { IconChevron } from "./Icons";
 
 // ─── GANTI URL INI dengan foto properti Anda ────────────────────────────────
+import { IconChevron } from "./Icons";
+
+import parkir from "../assets/gallery/parkir.jpg";
+import belakang1 from "../assets/gallery/belakang1.jpg";
+import belakang2 from "../assets/gallery/belakang2.jpg";
+import bilyard from "../assets/gallery/bilyard.jpg";
+import pingpong from "../assets/gallery/pingpong.jpg";
+
 const galleryItems = [
   {
-    label: "Rumah Kayu Jawa",
-    img: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=900&q=80",
+    label: "Oemah Kayu Penanggungan",
+    img: parkir,
     span: "col-span-2 row-span-2",
     height: "340px",
   },
   {
-    label: "Kolam Renang Pribadi",
-    img: "https://images.unsplash.com/photo-1615880484746-a134be9a6ecf?w=700&q=80",
+    label: "Halaman Belakang",
+    img: belakang1,
     height: "165px",
   },
   {
     label: "Area BBQ & Gathering",
-    img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=700&q=80",
+    img: belakang2,
     height: "165px",
   },
   {
-    label: "Kamar Tidur",
-    img: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&q=80",
+    label: "Meja Biliar",
+    img: bilyard,
     height: "165px",
   },
   {
-    label: "Pemandangan Gunung",
-    img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80",
+    label: "Meja Ping Pong",
+    img: pingpong,
     height: "165px",
   },
 ];
@@ -44,19 +52,26 @@ export default function Gallery() {
             <p className="text-[#B8962E] text-xs tracking-[0.35em] uppercase font-light mb-2">
               Galeri
             </p>
+
             <h2
               className="font-serif-display text-[#2C1A0E]"
-              style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 400 }}
+              style={{
+                fontSize: "clamp(2rem, 4vw, 3rem)",
+                fontWeight: 400,
+              }}
             >
-              Setiap Sudut<br />Punya Cerita
+              Setiap Sudut
+              <br />
+              Punya Cerita
             </h2>
           </div>
+
           <span className="text-[#B8962E] text-sm tracking-wider flex items-center gap-1 uppercase font-medium cursor-pointer hover:gap-3 transition-all duration-300">
             Lihat Semua Galeri <IconChevron />
           </span>
         </div>
 
-        {/* Mosaic grid */}
+        {/* Gallery Grid */}
         <div
           className="grid grid-cols-2 sm:grid-cols-4 gap-2"
           data-reveal
@@ -70,13 +85,22 @@ export default function Gallery() {
               <img
                 src={g.img}
                 alt={g.label}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="
+                  w-full
+                  h-full
+                  object-cover
+                  transition-transform
+                  duration-700
+                  group-hover:scale-105
+                "
                 style={{ minHeight: g.height }}
               />
+
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2C1A0E]/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2C1A0E]/70 to-transparent" />
+
               {/* Label */}
-              <p className="absolute bottom-3 left-4 font-serif-display text-[#F5EFE6]/90 text-sm italic z-10">
+              <p className="absolute bottom-3 left-4 font-serif-display text-[#F5EFE6] text-sm italic z-10">
                 {g.label}
               </p>
             </div>
