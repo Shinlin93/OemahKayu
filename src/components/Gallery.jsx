@@ -1,5 +1,3 @@
-import { IconChevron } from "./Icons";
-
 // ─── GANTI URL INI dengan foto properti Anda ────────────────────────────────
 import { IconChevron } from "./Icons";
 
