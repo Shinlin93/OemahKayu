@@ -2,8 +2,8 @@
 import { IconChevron } from "./Icons";
 
 import parkir from "../assets/parkir.jpeg";
-import belakang1 from "../assets/belakang1.jpeg";
-import belakang2 from "../assets/belakang2.jpeg";
+import belakang1 from "../assets/belakang-1.jpeg";
+import belakang2 from "../assets/belakang-2.jpeg";
 import bilyard from "../assets/bilyard.jpeg";
 import pingpong from "../assets/pingpong.jpeg";
 
