@@ -1,4 +1,4 @@
-import video1 from "../assets/video1.mp4";
+import Video1 from "../assets/Video1.mp4";
 
 export default function Story() {
   return (
@@ -19,7 +19,7 @@ export default function Story() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src={video1} type="video/mp4" />
+          <source src={Video1} type="video/mp4" />
         </video>
 
         {/* Overlay */}
