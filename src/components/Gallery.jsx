@@ -1,11 +1,11 @@
 // ─── GANTI URL INI dengan foto properti Anda ────────────────────────────────
 import { IconChevron } from "./Icons";
 
-import parkir from "../assets/gallery/parkir.jpg";
-import belakang1 from "../assets/gallery/belakang1.jpg";
-import belakang2 from "../assets/gallery/belakang2.jpg";
-import bilyard from "../assets/gallery/bilyard.jpg";
-import pingpong from "../assets/gallery/pingpong.jpg";
+import parkir from "../assets/parkir.jpg";
+import belakang1 from "../assets/belakang1.jpg";
+import belakang2 from "../assets/belakang2.jpg";
+import bilyard from "../assets/bilyard.jpg";
+import pingpong from "../assets/pingpong.jpg";
 
 const galleryItems = [
   {
