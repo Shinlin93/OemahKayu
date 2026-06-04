@@ -8,7 +8,7 @@ import { useScrolled } from "../hooks";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const scrolled = useScrolled(40);
+  const scrolled = useScrolled(50);
 
   const handleNav = (id) => {
     scrollToSection(id);
@@ -19,14 +19,14 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[#1A0F07]/90 backdrop-blur-xl shadow-lg"
-          : "bg-[#1A0F07]/35 backdrop-blur-md"
+          ? "bg-[#1A0F07]/90 backdrop-blur-xl shadow-xl"
+          : "bg-[#1A0F07]/40 backdrop-blur-md"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-[1600px] mx-auto px-8 lg:px-12">
 
-        {/* Desktop Navbar */}
-        <div className="h-24 flex items-center justify-between">
+        {/* Desktop */}
+        <div className="h-28 flex items-center justify-between">
 
           {/* Logo */}
           <a
@@ -35,33 +35,49 @@ export default function Navbar() {
               e.preventDefault();
               handleNav("hero");
             }}
-            className="flex items-center"
+            className="flex items-center flex-shrink-0"
           >
             <img
               src={logo}
               alt="Oemah Kayu Penanggungan"
-              className="h-20 lg:h-24 w-auto object-contain"
+              className="h-24 lg:h-28 w-auto object-contain"
             />
           </a>
 
-          {/* Desktop Menu */}
-          <nav className="hidden lg:flex items-center gap-10">
+          {/* Navigation */}
+          <nav className="hidden lg:flex items-center gap-14">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => handleNav(link.id)}
                 className="
+                  relative
                   text-[#F5EFE6]
-                  hover:text-[#D4AE3A]
                   text-sm
-                  tracking-[0.18em]
                   uppercase
+                  tracking-[0.25em]
                   font-light
-                  transition-colors
+                  transition-all
                   duration-300
+                  hover:text-[#D4AE3A]
+                  group
                 "
               >
                 {link.label}
+
+                <span
+                  className="
+                    absolute
+                    left-0
+                    -bottom-3
+                    h-[1px]
+                    w-0
+                    bg-[#D4AE3A]
+                    transition-all
+                    duration-300
+                    group-hover:w-full
+                  "
+                />
               </button>
             ))}
           </nav>
@@ -70,21 +86,23 @@ export default function Navbar() {
           <a
             href={WA_URL}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             className="
               hidden lg:flex
               items-center
-              gap-2
+              gap-3
               bg-[#D4AE3A]
               text-[#2C1A0E]
-              px-7
-              py-3
-              rounded-none
+              px-8
+              py-4
+              rounded-lg
               text-sm
-              tracking-[0.15em]
               uppercase
+              tracking-[0.18em]
               font-medium
-              hover:bg-[#E8C04A]
+              shadow-lg
+              hover:scale-105
+              hover:bg-[#E6BF4B]
               transition-all
               duration-300
             "
@@ -95,7 +113,7 @@ export default function Navbar() {
 
           {/* Mobile Button */}
           <button
-            className="lg:hidden text-white"
+            className="lg:hidden text-[#F5EFE6]"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? <IconClose /> : <IconMenu />}
@@ -108,18 +126,18 @@ export default function Navbar() {
         className={`
           lg:hidden
           overflow-hidden
-          transition-all
-          duration-500
           bg-[#1A0F07]/95
           backdrop-blur-xl
+          transition-all
+          duration-500
           ${
             menuOpen
-              ? "max-h-screen py-6"
+              ? "max-h-screen py-8"
               : "max-h-0"
           }
         `}
       >
-        <div className="flex flex-col items-center gap-6 px-8">
+        <div className="px-8 flex flex-col gap-6">
 
           {navLinks.map((link) => (
             <button
@@ -128,12 +146,12 @@ export default function Navbar() {
               className="
                 text-[#F5EFE6]
                 text-sm
-                tracking-[0.18em]
                 uppercase
+                tracking-[0.2em]
                 border-b
                 border-white/10
                 pb-4
-                w-full
+                text-left
               "
             >
               {link.label}
@@ -143,18 +161,18 @@ export default function Navbar() {
           <a
             href={WA_URL}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             className="
               flex
               items-center
               justify-center
-              gap-2
+              gap-3
               bg-[#D4AE3A]
               text-[#2C1A0E]
-              w-full
               py-4
+              rounded-lg
               uppercase
-              tracking-[0.15em]
+              tracking-[0.18em]
               text-sm
               font-medium
             "
