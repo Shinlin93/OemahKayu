@@ -52,11 +52,11 @@ export default function Hero() {
               }}
             >
               <span className="block">
-                Tempat Berkumpul
+                Dekat dengan Alam,
               </span>
 
               <span className="block">
-                dengan Orang-Orang
+                Dekat dengan Momen
               </span>
 
               <span
@@ -65,8 +65,10 @@ export default function Hero() {
                   fontStyle: "italic",
                   fontWeight: 300,
                 }}
+
+                //Dekat dengan Alam, Dekat dengan Momen yang Tak Tergantikan
               >
-                yang Paling Berarti
+                yang Tak Tergantikan
               </span>
             </h1>
 
@@ -78,14 +80,15 @@ export default function Hero() {
                 fontSize: "1.1rem",
               }}
             >
-              Rumah kayu Jawa yang hangat, kolam renang pribadi,
-              dan panorama Gunung Penanggungan untuk momen keluarga,
-              gathering, retreat, dan pengalaman menginap yang
-              tak terlupakan.
-            </p>
+              Rumah kayu Jawa yang hangat dengan kolam renang pribadi,
+              jalur jogging pagi yang menyegarkan, 
+              dan panorama Gunung Penanggungan yang memanjakan mata.
+              Tempat sempurna untuk beristirahat, berkumpul, dan menikmati
+              keindahan alam pegunungan yang menenangkan.
+            </p> 
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mb-16">
 
               <a
                 href={WA_URL}
