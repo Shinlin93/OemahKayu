@@ -13,7 +13,6 @@ const GOOGLE_MAPS_EMBED =
 export default function Location() {
 return ( <section id="lokasi" className="py-20 bg-[#F5EFE6]"> <div className="max-w-7xl mx-auto px-6 sm:px-8"> <div className="grid lg:grid-cols-2 gap-16 items-start">
 
-```
       {/* Kiri */}
       <div data-reveal>
         <p className="text-[#B8962E] text-xs tracking-[0.35em] uppercase font-light mb-3">
