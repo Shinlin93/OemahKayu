@@ -2,19 +2,12 @@ import { accessRoutes } from "../data";
 import { IconLocation, IconWhatsApp } from "./Icons";
 import { WA_URL } from "../constants";
 
-// Fallback jika Google Maps gagal dimuat
-const MAP_PHOTO =
-"https://images.unsplash.com/photo-1585320806297-9794b3e4aaae?w=900&q=80";
-
-// Google Maps Embed Omah Kayu Mbah
-const GOOGLE_MAPS_EMBED = 
-"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.3101791136205!2d112.696985!3d-7.649757300000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7d9227af25161%3A0xfc194369f39efe57!2sOmah%20Kayu%20Mbah!5e0!3m2!1sid!2sid!4v1781940382909!5m2!1sid!2sid";
-
 export default function Location() {
 return ( <section id="lokasi" className="py-20 bg-[#F5EFE6]"> <div className="max-w-7xl mx-auto px-6 sm:px-8"> <div className="grid lg:grid-cols-2 gap-16 items-start">
 
+```
       {/* Kiri */}
-      <div data-reveal>
+      <div>
         <p className="text-[#B8962E] text-xs tracking-[0.35em] uppercase font-light mb-3">
           Lokasi
         </p>
@@ -69,36 +62,16 @@ return ( <section id="lokasi" className="py-20 bg-[#F5EFE6]"> <div className="ma
       </div>
 
       {/* Kanan */}
-      <div
-        data-reveal
-        className="relative overflow-hidden border border-[#2C1A0E]/10"
-      >
-        {GOOGLE_MAPS_EMBED ? (
-          <iframe
-            src={GOOGLE_MAPS_EMBED}
-            width="100%"
-            height="420"
-            style={{ border: 0, display: "block" }}
-            allowFullScreen
-            loading="lazy"
-            title="Lokasi Omah Kayu Mbah"
-          />
-        ) : (
-          <div className="relative">
-            <img
-              src={MAP_PHOTO}
-              alt="Area Omah Kayu Mbah"
-              className="w-full object-cover"
-              style={{ height: 420 }}
-            />
-
-            <div className="absolute inset-0 bg-[#2C1A0E]/20" />
-
-            <div className="absolute top-4 left-4 bg-[#2C1A0E] text-[#F5EFE6] px-3 py-1.5 text-xs tracking-widest uppercase">
-              Pandaan · Pasuruan
-            </div>
-          </div>
-        )}
+      <div className="overflow-hidden border border-[#2C1A0E]/10 bg-white">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.3101791136205!2d112.696985!3d-7.649757300000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7d9227af25161%3A0xfc194369f39efe57!2sOmah%20Kayu%20Mbah!5e0!3m2!1sid!2sid!4v1781940382909!5m2!1sid!2sid"
+          width="100%"
+          height="420"
+          style={{ border: 0, display: "block" }}
+          allowFullScreen
+          loading="lazy"
+          title="Lokasi Omah Kayu Mbah"
+        />
 
         <div className="bg-[#2C1A0E] px-5 py-4 flex items-center justify-between gap-4 flex-wrap">
           <p className="text-[#F5EFE6]/60 text-xs font-light">
@@ -120,6 +93,7 @@ return ( <section id="lokasi" className="py-20 bg-[#F5EFE6]"> <div className="ma
     </div>
   </div>
 </section>
+```
 
 );
 }
