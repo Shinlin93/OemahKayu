@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function Hero() {
   return (
-    {/* Content */}
     <div className="relative z-10 min-h-screen flex items-center pb-28">
+      {/* Content Container */}
       <div className="w-full max-w-7xl mx-auto px-8 lg:px-16 pt-32">
         <div className="max-w-3xl">
 
@@ -60,18 +60,16 @@ export default function Hero() {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            {/* Tombol Utama */}
             <button className="bg-[#D4AE3A] text-slate-900 px-8 py-3 rounded font-medium hover:bg-[#bfa035] transition">
               Pesan Sekarang
             </button>
-            {/* Tombol Kedua */}
             <button className="border border-white text-white px-8 py-3 rounded font-medium hover:bg-white/10 transition">
               Lihat Galeri
             </button>
-          </div> {/* <-- Menutup div bagian Buttons */}
+          </div>
 
-        </div> {/* <-- Menutup div max-w-3xl */}
-      </div> {/* <-- Menutup div w-full max-w-7xl */}
-    </div> {/* <-- Menutup div relative z-10 */}
+        </div>
+      </div>
+    </div>
   );
 }
