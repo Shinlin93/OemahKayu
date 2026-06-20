@@ -63,4 +63,3 @@
 
   {/* Buttons */}
   <div className="flex flex-col sm:flex-row gap-4">
-```
