@@ -7,8 +7,8 @@ const MAP_PHOTO =
 "https://images.unsplash.com/photo-1585320806297-9794b3e4aaae?w=900&q=80";
 
 // Google Maps Embed Omah Kayu Mbah
-const GOOGLE_MAPS_EMBED =
-"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.3101791136205!2d112.696985!3d-7.649757300000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7d9227af25161%3A0xfc194369f39efe57!2sOmah%20Kayu%20Mbah!5e0!3m2!1sid!2sid!4v1781939921673!5m2!1sid!2sid";
+const GOOGLE_MAPS_EMBED = 
+"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.3101791136205!2d112.696985!3d-7.649757300000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7d9227af25161%3A0xfc194369f39efe57!2sOmah%20Kayu%20Mbah!5e0!3m2!1sid!2sid!4v1781940382909!5m2!1sid!2sid";
 
 export default function Location() {
 return ( <section id="lokasi" className="py-20 bg-[#F5EFE6]"> <div className="max-w-7xl mx-auto px-6 sm:px-8"> <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -121,7 +121,6 @@ return ( <section id="lokasi" className="py-20 bg-[#F5EFE6]"> <div className="ma
     </div>
   </div>
 </section>
-```
 
 );
 }
