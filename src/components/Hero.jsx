@@ -1,75 +1,90 @@
-import React from 'react';
+import heroBg from "../assets/HERO-OMAH.png";
+import { IconWhatsApp } from "./Icons";
+import { WA_URL } from "../constants";
+import { scrollToSection } from "../hooks";
 
 export default function Hero() {
   return (
-    <div className="relative z-10 min-h-screen flex items-center pb-28">
-      {/* Content Container */}
-      <div className="w-full max-w-7xl mx-auto px-8 lg:px-16 pt-32">
-        <div className="max-w-3xl">
+    <section
+      id="hero"
+      className="relative min-h-screen"
+      style={{
+        backgroundImage: `url(${heroBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-[#1A0F07]/55" />
 
-          {/* Location */}
-          <p className="text-[#D4AE3A] text-xs tracking-[0.45em] uppercase mb-6 font-light">
-            Oemah Kayu Penanggungan · Pandaan · Pasuruan
-          </p>
+      {/* Content */}
+      <div className="relative z-10 min-h-screen flex items-center pb-28">
+        <div className="w-full max-w-7xl mx-auto px-8 lg:px-16 pt-32">
+          <div className="max-w-3xl">
 
-          {/* Gold Divider */}
-          <div className="w-28 h-[1px] bg-[#D4AE3A] mb-8" />
+            {/* Location */}
+            <p className="text-[#D4AE3A] text-xs tracking-[0.45em] uppercase mb-6 font-light">
+              Oemah Kayu Penanggungan · Pandaan · Pasuruan
+            </p>
 
-          {/* Heading */}
-          <h1
-            className="font-serif-display text-white mb-8"
-            style={{
-              fontSize: "clamp(3.2rem, 6vw, 6.2rem)",
-              lineHeight: 1.02,
-              fontWeight: 400,
-            }}
-          >
-            <span className="block">
-              Dekat dengan Alam,
-            </span>
-            <span className="block">
-              Dekat dengan Momen
-            </span>
-            <span
-              className="block text-[#D4AE3A]"
+            {/* Gold Divider */}
+            <div className="w-28 h-[1px] bg-[#D4AE3A] mb-8" />
+
+            {/* Heading */}
+            <h1
+              className="font-serif-display text-white mb-8"
               style={{
-                fontStyle: "italic",
-                fontWeight: 300,
+                fontSize: "clamp(3.2rem, 6vw, 6.2rem)",
+                lineHeight: 1.02,
+                fontWeight: 400,
               }}
             >
-              yang Tak Tergantikan
-            </span>
-          </h1>
+              <span className="block">Dekat dengan Alam,</span>
+              <span className="block">Dekat dengan Momen</span>
+              <span
+                className="block text-[#D4AE3A]"
+                style={{ fontStyle: "italic", fontWeight: 300 }}
+              >
+                yang Tak Tergantikan
+              </span>
+            </h1>
 
-          {/* Description */}
-          <p
-            className="text-white/85 max-w-2xl mb-12 font-light"
-            style={{
-              lineHeight: 1.9,
-              fontSize: "1.1rem",
-            }}
-          >
-            Rumah kayu Jawa yang hangat dengan kolam renang pribadi,
-            jalur jogging pagi yang menyegarkan, dan panorama Gunung
-            Penanggungan yang memanjakan mata.
-            <br />
-            <br />
-            Tempat sempurna untuk beristirahat, berkumpul, dan menikmati
-            keindahan alam pegunungan yang menenangkan.
-          </p>
+            {/* Description */}
+            <p
+              className="text-white/85 max-w-2xl mb-12 font-light"
+              style={{ lineHeight: 1.9, fontSize: "1.1rem" }}
+            >
+              Rumah kayu Jawa yang hangat dengan kolam renang pribadi,
+              jalur jogging pagi yang menyegarkan, dan panorama Gunung
+              Penanggungan yang memanjakan mata.
+              <br /><br />
+              Tempat sempurna untuk beristirahat, berkumpul, dan menikmati
+              keindahan alam pegunungan yang menenangkan.
+            </p>
 
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-[#D4AE3A] text-slate-900 px-8 py-3 rounded font-medium hover:bg-[#bfa035] transition">
-              Pesan Sekarang
-            </button>
-            <button className="border border-white text-white px-8 py-3 rounded font-medium hover:bg-white/10 transition">
-              Lihat Galeri
-            </button>
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href={WA_URL}
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center justify-center gap-3 bg-[#D4AE3A] text-[#2C1A0E] px-8 py-4 text-sm tracking-[0.1em] uppercase font-semibold hover:bg-[#E6BF4B] hover:-translate-y-0.5 transition-all duration-300"
+              >
+                <IconWhatsApp />
+                Cek Ketersediaan
+              </a>
+              <button
+                onClick={() => scrollToSection("fasilitas")}
+                className="inline-flex items-center justify-center gap-3 border border-white/40 text-white px-8 py-4 text-sm tracking-[0.1em] uppercase font-light hover:border-[#D4AE3A] hover:text-[#D4AE3A] transition-all duration-300 bg-transparent cursor-pointer"
+              >
+                Lihat Fasilitas
+              </button>
+            </div>
+
           </div>
-
         </div>
       </div>
-    </div>
+    </section>
   );
 }

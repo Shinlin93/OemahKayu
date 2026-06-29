@@ -1,6 +1,4 @@
-// ─── GANTI URL foto di bawah dengan foto properti Anda ──────────────────────
-const VIDEO_BG =
-  "";
+import storyBg from "../assets/HERO-OMAH.png"; // ganti dengan foto yang sesuai jika ada
 
 export default function Story() {
   return (
@@ -13,15 +11,15 @@ export default function Story() {
         data-reveal
       >
         <img
-          src={VIDEO_BG}
+          src={storyBg}
           alt="Pemandangan Gunung Penanggungan"
           className="w-full h-full object-cover absolute inset-0"
         />
         <div className="absolute inset-0 bg-[#1A2E1C]/55" />
 
         {/* Play button */}
-        <div className="relative z-10 h-full flex flex-col items-center justify-center gap-3">
-          <div className="w-18 h-18 w-[72px] h-[72px] rounded-full border border-[#B8962E]/50 bg-[#B8962E]/10 flex items-center justify-center text-[#B8962E] text-2xl group-hover:bg-[#B8962E] group-hover:text-[#2C1A0E] transition-all duration-400">
+        <div className="relative z-10 h-full flex flex-col items-center justify-center gap-3" style={{ minHeight: 380 }}>
+          <div className="w-[72px] h-[72px] rounded-full border border-[#B8962E]/50 bg-[#B8962E]/10 flex items-center justify-center text-[#B8962E] text-2xl group-hover:bg-[#B8962E] group-hover:text-[#2C1A0E] transition-all duration-400">
             ▶
           </div>
           <p className="text-[#F5EFE6]/45 text-xs tracking-[0.3em] uppercase">
