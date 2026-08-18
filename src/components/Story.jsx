@@ -1,4 +1,4 @@
-import storyBg from "../assets/HERO-OMAH.png"; // ganti dengan foto yang sesuai jika ada
+import storyBg from "../assets/hero-gunung.png";
 
 export default function Story() {
   return (

@@ -1,4 +1,4 @@
-import heroBg from "../assets/HERO-OMAH.png";
+import heroBg from "../assets/hero-gunung.png";
 import { IconWhatsApp } from "./Icons";
 import { WA_URL } from "../constants";
 import { scrollToSection } from "../hooks";
