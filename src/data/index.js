@@ -3,15 +3,15 @@
 
 export const navLinks = [
   { label: "Fasilitas",    id: "fasilitas" },
+  { label: "Aktivitas",    id: "aktivitas" },
   { label: "Galeri",       id: "galeri" },
-  { label: "Untuk Momen",  id: "momen" },
   { label: "Lokasi",       id: "lokasi" },
   { label: "Ulasan",       id: "ulasan" },
   { label: "FAQ",          id: "faq" },
 ];
 
 export const quickFacts = [
-  { label: "Kapasitas",         value: "15–20 Orang" },
+  { label: "Kapasitas",         value: "12–16 Orang" },
   { label: "Kolam Renang",      value: "Pribadi" },
   { label: "45 Menit dari",     value: "Surabaya" },
   { label: "Privat",            value: "Hanya untuk Anda" },
@@ -19,25 +19,14 @@ export const quickFacts = [
 ];
 
 export const facilities = [
-  { title: "6 Kamar Tidur",   desc: "AC & Kamar Mandi Dalam" },
-  { title: "Ruang Keluarga",  desc: "Nyaman & Luas" },
+  { title: "2 Kamar Tidur",   desc: "Masing-Masing 3 Kasur & KM Dalam" },
+  { title: "Ruang Keluarga",  desc: "Nyaman + 2 Kasur Tambahan" },
   { title: "Dapur Lengkap",   desc: "Peralatan Memasak" },
-  { title: "Area BBQ",        desc: "Outdoor" },
+  { title: "TV",              desc: "Hiburan Keluarga" },
   { title: "Wi-Fi Cepat",     desc: "Internet Stabil" },
+  { title: "Area BBQ",        desc: "Outdoor" },
   { title: "Parkir Luas",     desc: "Banyak Mobil" },
   { title: "Taman Luas",      desc: "Asri & Sejuk" },
-  { title: "Air Panas",       desc: "24 Jam" },
-];
-
-export const activities = [
-  { emoji: "🏡", title: "Family Gathering",  desc: "Kebersamaan tanpa batas" },
-  { emoji: "🤝", title: "Reuni",             desc: "Kenangan yang terulang indah" },
-  { emoji: "🧘", title: "Retreat",            desc: "Tenang, fokus, dan menyegarkan" },
-  { emoji: "🌿", title: "Staycation",         desc: "Liburan singkat yang berkesan" },
-  { emoji: "💼", title: "Team Building",      desc: "Sinergi tim yang kuat" },
-  { emoji: "💐", title: "Arisan",             desc: "Momen berkumpul yang istimewa" },
-  { emoji: "🎉", title: "Acara Keluarga",     desc: "Perayaan yang tak terlupakan" },
-  { emoji: "🌟", title: "Corporate Retreat",  desc: "Ide segar di alam terbuka" },
 ];
 
 export const testimonials = [
@@ -70,7 +59,7 @@ export const testimonials = [
 export const faqs = [
   {
     q: "Berapa kapasitas maksimal tamu?",
-    a: "Oemah Kayu Penanggungan dapat menampung 15 hingga 20 orang dengan nyaman. Tersedia 6 kamar tidur dengan fasilitas lengkap, ruang keluarga luas, dan area outdoor yang lapang.",
+    a: "Oemah Kayu Penanggungan nyaman untuk 12 hingga 16 orang. Tersedia 2 kamar tidur dengan 3 kasur ukuran besar di masing-masing kamar (kamar mandi dalam), ditambah 2 kasur tambahan di ruang keluarga depan TV yang dapat menampung 3–4 orang lagi.",
   },
   {
     q: "Apakah kolam renangnya benar-benar privat?",
