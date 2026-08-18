@@ -6,6 +6,7 @@ export const navLinks = [
   { label: "Aktivitas",    id: "aktivitas" },
   { label: "Galeri",       id: "galeri" },
   { label: "Lokasi",       id: "lokasi" },
+  { label: "Sekitar",      id: "sekitar" },
   { label: "Ulasan",       id: "ulasan" },
   { label: "FAQ",          id: "faq" },
 ];
@@ -87,4 +88,31 @@ export const accessRoutes = [
   { city: "Dari Surabaya", time: "± 45 menit", via: "Tol Surabaya–Pandaan" },
   { city: "Dari Sidoarjo", time: "± 35 menit", via: "Tol Sidoarjo–Pandaan" },
   { city: "Dari Malang",   time: "± 40 menit", via: "Tol Pandaan–Malang" },
+];
+
+export const nearbyPlaces = [
+  {
+    name: "Warung Sate Mak Tri",
+    category: "Kuliner",
+    desc: "Sate khas Jawa Timur dengan cita rasa otentik, favorit warga sekitar Prigen.",
+    mapUrl: "https://maps.app.goo.gl/5gG2xF8ScUZtBtLW7?g_st=aw",
+  },
+  {
+    name: "Warung Kepulan Asap",
+    category: "Kuliner",
+    desc: "Makan dengan suasana sawah terbuka dan pemandangan langsung ke Gunung Penanggungan.",
+    mapUrl: "https://maps.app.goo.gl/RTwUQXT84Vibfvuw9?g_st=aw",
+  },
+  {
+    name: "Gua Gedhe Dusun Guwo",
+    category: "Wisata Alam",
+    desc: "Gua alami yang jadi spot eksplorasi seru — cocok untuk keluarga yang suka sedikit petualangan.",
+    mapUrl: "https://maps.app.goo.gl/tBHdSGikfCZ5mWZKA?g_st=aw",
+  },
+  {
+    name: "Sukoreno View",
+    category: "Wisata Alam",
+    desc: "Spot pemandangan sawah dan pegunungan yang instagramable, sempurna untuk foto keluarga.",
+    mapUrl: "https://maps.app.goo.gl/1PMDsjaAM6Z8iEG47?g_st=aw",
+  },
 ];
