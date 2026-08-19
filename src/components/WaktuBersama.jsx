@@ -1,4 +1,4 @@
-import photoMalam from "../assets/tampak-depan-malam.png";
+import photoMalam from "../assets/halaman-belakang.jpeg";
 import { IconBed, IconPool, IconBBQ, IconChevron } from "./Icons";
 import { scrollToSection } from "../hooks";
 
@@ -46,13 +46,16 @@ export default function WaktuBersama() {
 
           {/* ── Kanan: Foto + Glass Card ── */}
           <div className="relative" data-reveal>
-            <div className="rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
                 src={photoMalam}
-                alt="Tampak depan Oemah Kayu Penanggungan di malam hari"
+                alt="Halaman belakang Oemah Kayu Penanggungan dengan pemandangan Gunung Penanggungan"
                 className="w-full object-cover"
                 style={{ height: "clamp(420px, 55vw, 620px)" }}
               />
+              {/* Scrim gelap di pojok kanan-bawah — jaga kontras teks glass card
+                  apapun kondisi terang/gelap foto yang dipakai */}
+              <div className="absolute inset-0 bg-gradient-to-tl from-black/45 via-transparent to-transparent pointer-events-none" />
             </div>
 
             {/* Glass card — melayang di dalam foto */}
