@@ -9,7 +9,7 @@
 //   Hero          → tangkap perhatian
 //   QuickFacts    → validasi cepat, hilangkan keraguan awal
 //   VideoSection  → imersi visual & emosional
-//   Story         → bangun koneksi ("lebih dari sekadar tempat menginap")
+//   WaktuBersama  → highlight foto & fasilitas utama
 //   Activities    → tamu membayangkan diri mereka di sana
 //   Facilities    → bukti rasional (apa saja yang didapat)
 //   Gallery       → bukti visual tambahan, memperkuat keinginan
@@ -26,7 +26,6 @@ import Hero          from "./components/Hero";
 import QuickFacts     from "./components/QuickFacts";
 import VideoSection  from "./components/VideoSection";
 import WaktuBersama  from "./components/WaktuBersama";
-import Story         from "./components/Story";
 import Activities    from "./components/Activities";
 import Facilities    from "./components/Facilities";
 import Gallery       from "./components/Gallery";
@@ -60,8 +59,6 @@ export default function OemahKayuLanding() {
       <VideoSection />
 
       <WaktuBersama />
-
-      <Story />
 
       <Activities />
 
