@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import heroGunung from "../assets/hero-gunung.png";
 import heroOmah from "../assets/HERO-OMAH.png";
-import logo from "../logo.png";
 import { IconWhatsApp, IconCalendar } from "./Icons";
 import { WA_URL } from "../constants";
 
@@ -47,7 +46,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/25" />
 
       {/* Content */}
-      <div className="relative z-10 min-h-screen flex items-center pt-24 pb-20">
+      <div className="relative z-10 min-h-screen flex items-center pt-40 md:pt-44 pb-20">
         <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-16">
 
           {/* ── Glass Box ── */}
@@ -61,15 +60,6 @@ export default function Hero() {
               boxShadow: "0 20px 50px rgba(0,0,0,0.25)",
             }}
           >
-            {/* Mini logo lockup */}
-            <div className="flex items-center gap-3 mb-8">
-              <img
-                src={logo}
-                alt="Oemah Kayu Penanggungan"
-                className="h-10 w-auto object-contain"
-              />
-            </div>
-
             {/* Heading */}
             <h1
               className="font-serif-display text-white mb-4"
