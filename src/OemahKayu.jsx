@@ -25,6 +25,7 @@ import Navbar        from "./components/Navbar";
 import Hero          from "./components/Hero";
 import QuickFacts     from "./components/QuickFacts";
 import VideoSection  from "./components/VideoSection";
+import WaktuBersama  from "./components/WaktuBersama";
 import Story         from "./components/Story";
 import Activities    from "./components/Activities";
 import Facilities    from "./components/Facilities";
@@ -57,6 +58,8 @@ export default function OemahKayuLanding() {
 
       {/* VIDEO DRONE FULL WIDTH — imersi sebelum masuk ke cerita */}
       <VideoSection />
+
+      <WaktuBersama />
 
       <Story />
 
