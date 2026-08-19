@@ -255,16 +255,15 @@ export default function Activities() {
         {/* ── Fasilitas tambahan (teks kecil, bukan card kotak) ── */}
         <div className="mt-10 pt-8 border-t border-[#2C1A0E]/8 flex flex-wrap gap-x-10 gap-y-3" data-reveal>
           {[
-            { emoji: "🏊", label: "Kolam Renang Pribadi" },
-            { emoji: "🎱", label: "Meja Biliar" },
-            { emoji: "🏓", label: "Ping Pong Outdoor" },
-            { emoji: "🔥", label: "Area BBQ" },
-            { emoji: "🌿", label: "Taman & Halaman Luas" },
-            { emoji: "🥾", label: "Wisata Gunung Penanggungan · ± 15 mnt" },
-          ].map((f, i) => (
-            <div key={i} className="flex items-center gap-2.5">
-              <span style={{ fontSize: "1.1rem" }}>{f.emoji}</span>
-              <span className="text-[#6B5846] text-xs font-light tracking-wide">{f.label}</span>
+            "Kolam Renang Pribadi",
+            "Meja Biliar",
+            "Ping Pong Outdoor",
+            "Area BBQ",
+            "Taman & Halaman Luas",
+            "Wisata Gunung Penanggungan · ± 15 mnt",
+          ].map((label, i) => (
+            <div key={i} className="flex items-center">
+              <span className="text-[#6B5846] text-xs font-light tracking-wide">{label}</span>
             </div>
           ))}
         </div>
