@@ -3,9 +3,9 @@ import { IconBed, IconPool, IconBBQ, IconChevron } from "./Icons";
 import { scrollToSection } from "../hooks";
 
 const highlights = [
-  { icon: <IconBed />,  title: "3 Kamar Tidur",         desc: "Nyaman & Privat" },
-  { icon: <IconPool />, title: "Kolam Renang",           desc: "Pribadi" },
-  { icon: <IconBBQ />,  title: "Area BBQ",               desc: "Outdoor" },
+  { icon: <IconBed />,  title: "Kamar Tidur" },
+  { icon: <IconPool />, title: "Kolam Renang" },
+  { icon: <IconBBQ />,  title: "Area Outdoor" },
 ];
 
 export default function WaktuBersama() {
@@ -44,36 +44,37 @@ export default function WaktuBersama() {
             </button>
           </div>
 
-          {/* ── Kanan: Foto + Floating Card ── */}
+          {/* ── Kanan: Foto + Glass Card ── */}
           <div className="relative" data-reveal>
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img
                 src={photoMalam}
                 alt="Tampak depan Oemah Kayu Penanggungan di malam hari"
-                className="w-full h-auto object-cover"
-                style={{ aspectRatio: "16 / 9" }}
+                className="w-full object-cover"
+                style={{ height: "clamp(420px, 55vw, 620px)" }}
               />
             </div>
 
-            {/* Floating card */}
+            {/* Glass card — melayang di dalam foto */}
             <div
-              className="absolute -bottom-8 right-4 sm:right-8 bg-white rounded-2xl p-6 w-60 sm:w-64"
-              style={{ boxShadow: "0 20px 45px rgba(44,26,14,0.18)" }}
+              className="absolute bottom-6 right-6 left-6 sm:left-auto sm:w-64 rounded-2xl p-6"
+              style={{
+                background: "rgba(255,255,255,0.15)",
+                backdropFilter: "blur(16px)",
+                WebkitBackdropFilter: "blur(16px)",
+                border: "1px solid rgba(255,255,255,0.25)",
+                boxShadow: "0 20px 45px rgba(0,0,0,0.25)",
+              }}
             >
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-4">
                 {highlights.map((h, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <div className="text-[#3A5A3C] flex-shrink-0">
+                    <div className="text-[#F5EFE6] flex-shrink-0">
                       {h.icon}
                     </div>
-                    <div>
-                      <p className="text-[#2C1A0E] text-sm font-medium leading-tight">
-                        {h.title}
-                      </p>
-                      <p className="text-[#6B5846] text-xs font-light">
-                        {h.desc}
-                      </p>
-                    </div>
+                    <p className="text-[#F5EFE6] text-sm font-medium">
+                      {h.title}
+                    </p>
                   </div>
                 ))}
               </div>
