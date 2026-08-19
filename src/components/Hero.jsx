@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
+import heroDepan from "../assets/hero-depan.jpeg";
 import heroGunung from "../assets/hero-gunung.png";
-import heroOmah from "../assets/HERO-OMAH.png";
+import heroMalam from "../assets/tampak-depan-malam.png";
 import { IconWhatsApp, IconCalendar } from "./Icons";
 import { WA_URL } from "../constants";
 
 // ─── DAFTAR FOTO HERO ────────────────────────────────────────────────────────
 // Tambah foto baru: 1) import foto-nya di atas, 2) masukkan ke array ini.
-const heroImages = [heroGunung, heroOmah];
+const heroImages = [heroDepan, heroGunung, heroMalam];
 
 // Durasi tiap slide sebelum otomatis geser ke slide berikutnya (dalam ms)
 const SLIDE_DURATION = 6000;
@@ -69,9 +70,9 @@ export default function Hero() {
                 lineHeight: 1.2,
               }}
             >
-              Tempat Beristirahat,
+              Nikmati Tenangnya
               <br />
-              Dekat dengan Alam
+              Alam Penanggungan
             </h1>
 
             {/* Description */}
