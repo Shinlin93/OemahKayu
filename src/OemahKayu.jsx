@@ -13,7 +13,7 @@
 //   Activities    → tamu membayangkan diri mereka di sana
 //   Facilities    → bukti rasional (apa saja yang didapat)
 //   Gallery       → bukti visual tambahan, memperkuat keinginan
-//   Testimonials  → social proof sebelum closing
+//   (Testimonials dinonaktifkan sementara)
 //   Location      → hilangkan friksi praktis
 //   Nearby        → nilai tambah: kuliner & wisata terdekat
 //   FAQ           → hilangkan objection terakhir
@@ -29,7 +29,7 @@ import WaktuBersama  from "./components/WaktuBersama";
 import Activities    from "./components/Activities";
 import Facilities    from "./components/Facilities";
 import Gallery       from "./components/Gallery";
-import Testimonials  from "./components/Testimonials";
+// import Testimonials  from "./components/Testimonials"; // dinonaktifkan sementara
 import Location      from "./components/Location";
 import Nearby        from "./components/Nearby";
 import FAQ           from "./components/FAQ";
@@ -66,7 +66,7 @@ export default function OemahKayuLanding() {
 
       <Gallery />
 
-      <Testimonials />
+      {/* <Testimonials />  dinonaktifkan sementara */}
 
       <Location />
 
