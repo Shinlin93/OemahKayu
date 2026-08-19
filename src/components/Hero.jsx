@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 import heroGunung from "../assets/hero-gunung.png";
 import heroOmah from "../assets/HERO-OMAH.png";
-import { IconWhatsApp } from "./Icons";
+import logo from "../logo.png";
+import { IconWhatsApp, IconCalendar } from "./Icons";
 import { WA_URL } from "../constants";
-import { scrollToSection } from "../hooks";
 
 // ─── DAFTAR FOTO HERO ────────────────────────────────────────────────────────
 // Tambah foto baru: 1) import foto-nya di atas, 2) masukkan ke array ini.
-// Urutan array = urutan slide. Semua foto sebaiknya rasio & resolusi mirip
-// (idealnya landscape 16:9, minimal ±1600px lebar) supaya transisinya mulus.
 const heroImages = [heroGunung, heroOmah];
 
 // Durasi tiap slide sebelum otomatis geser ke slide berikutnya (dalam ms)
@@ -18,7 +16,7 @@ export default function Hero() {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    if (heroImages.length <= 1) return; // tidak perlu timer kalau cuma 1 foto
+    if (heroImages.length <= 1) return;
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % heroImages.length);
     }, SLIDE_DURATION);
@@ -28,7 +26,7 @@ export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen overflow-hidden">
 
-      {/* ── Background images — ditumpuk, crossfade pakai opacity ── */}
+      {/* ── Background images — crossfade ── */}
       {heroImages.map((img, i) => (
         <div
           key={i}
@@ -43,78 +41,89 @@ export default function Hero() {
         />
       ))}
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#1A0F07]/55" />
+      {/* Overlay tipis — cukup untuk jaga kontras dot & elemen luar box,
+          tidak menggelapkan foto sebanyak sebelumnya karena glass box
+          sudah punya kontrasnya sendiri */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/25" />
 
       {/* Content */}
-      <div className="relative z-10 min-h-screen flex items-center pb-28">
-        <div className="w-full max-w-7xl mx-auto px-8 lg:px-16 pt-32">
-          <div className="max-w-3xl">
+      <div className="relative z-10 min-h-screen flex items-center pt-24 pb-20">
+        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-16">
 
-            {/* Location */}
-            <p className="text-[#D4AE3A] text-xs tracking-[0.45em] uppercase mb-6 font-light">
-              Oemah Kayu Penanggungan · Prigen · Pasuruan
-            </p>
-
-            {/* Gold Divider */}
-            <div className="w-28 h-[1px] bg-[#D4AE3A] mb-8" />
+          {/* ── Glass Box ── */}
+          <div
+            className="max-w-lg rounded-2xl p-8 md:p-10"
+            style={{
+              background: "rgba(255,255,255,0.10)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+              border: "1px solid rgba(255,255,255,0.20)",
+              boxShadow: "0 20px 50px rgba(0,0,0,0.25)",
+            }}
+          >
+            {/* Mini logo lockup */}
+            <div className="flex items-center gap-3 mb-8">
+              <img
+                src={logo}
+                alt="Oemah Kayu Penanggungan"
+                className="h-10 w-auto object-contain"
+              />
+            </div>
 
             {/* Heading */}
             <h1
-              className="font-serif-display text-white mb-8"
+              className="font-serif-display text-white mb-4"
               style={{
-                fontSize: "clamp(3.2rem, 6vw, 6.2rem)",
-                lineHeight: 1.02,
+                fontSize: "clamp(2rem, 4vw, 3rem)",
                 fontWeight: 400,
+                lineHeight: 1.2,
               }}
             >
-              <span className="block">Dekat dengan Alam,</span>
-              <span className="block">Nikmati setiap Momen</span>
-              <span
-                className="block text-[#D4AE3A]"
-                style={{ fontStyle: "italic", fontWeight: 300 }}
-              >
-                yang Tak Tergantikan
-              </span>
+              Tempat Beristirahat,
+              <br />
+              Dekat dengan Alam
             </h1>
 
             {/* Description */}
             <p
-              className="text-white/85 max-w-2xl mb-12 font-light"
-              style={{ lineHeight: 1.9, fontSize: "1.1rem" }}
+              className="text-white/85 font-light mb-8"
+              style={{ lineHeight: 1.8, fontSize: "0.95rem" }}
             >
-              Rumah kayu Jawa dengan kolam renang pribadi,
-              jalur jogging pagi yang menyegarkan, dan panorama Gunung
-              Penanggungan yang memanjakan mata.
-              <br /><br />
-              Tempat sempurna untuk beristirahat, berkumpul, dan menikmati
-              keindahan alam pegunungan yang menenangkan.
+              Nikmati suasana tenang, udara sejuk, dan pemandangan
+              menakjubkan di Oemah Kayu Penanggungan.
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-wrap gap-3">
               <a
                 href={WA_URL}
                 target="_blank"
                 rel="noopener"
-                className="inline-flex items-center justify-center gap-3 bg-[#D4AE3A] text-[#2C1A0E] px-8 py-4 text-sm tracking-[0.1em] uppercase font-semibold hover:bg-[#E6BF4B] hover:-translate-y-0.5 transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-[#C9A87C] text-[#2C1A0E] px-5 py-3 rounded-lg text-sm font-medium hover:bg-[#D4B98C] hover:-translate-y-0.5 transition-all duration-300"
               >
-                <IconWhatsApp />
+                <IconCalendar />
                 Cek Ketersediaan
               </a>
-              <button
-                onClick={() => scrollToSection("fasilitas")}
-                className="inline-flex items-center justify-center gap-3 border border-white/40 text-white px-8 py-4 text-sm tracking-[0.1em] uppercase font-light hover:border-[#D4AE3A] hover:text-[#D4AE3A] transition-all duration-300 bg-transparent cursor-pointer"
+              <a
+                href={WA_URL}
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium text-white transition-all duration-300"
+                style={{
+                  background: "rgba(255,255,255,0.10)",
+                  border: "1px solid rgba(255,255,255,0.25)",
+                }}
               >
-                Lihat Fasilitas
-              </button>
+                <IconWhatsApp />
+                Hubungi Kami
+              </a>
             </div>
-
           </div>
+
         </div>
       </div>
 
-      {/* ── Dot indicator — muncul cuma kalau foto lebih dari 1 ── */}
+      {/* ── Dot indicator ── */}
       {heroImages.length > 1 && (
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
           {heroImages.map((_, i) => (
@@ -123,7 +132,7 @@ export default function Hero() {
               onClick={() => setCurrent(i)}
               aria-label={`Lihat foto ${i + 1}`}
               className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer border-none ${
-                current === i ? "w-8 bg-[#D4AE3A]" : "w-4 bg-white/30 hover:bg-white/50"
+                current === i ? "w-8 bg-[#D4AE3A]" : "w-4 bg-white/40 hover:bg-white/60"
               }`}
             />
           ))}
