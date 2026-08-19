@@ -16,7 +16,7 @@ export default function Footer() {
         />
 
         <p className="text-[#B8962E] text-xs tracking-[0.3em] uppercase font-light mb-8">
-          Pandaan · Pasuruan · Jawa Timur · Sejak 2024
+          Prigen · Pasuruan · Jawa Timur · Sejak 2024
         </p>
 
         {/* Nav links */}

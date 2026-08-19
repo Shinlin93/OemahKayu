@@ -22,7 +22,7 @@ export default function Activities() {
               className="font-serif-display text-[#2C1A0E]"
               style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.4rem)", fontWeight: 400, lineHeight: 1.15 }}
             >
-              Pagi di Pandaan<br />
+              Pagi di Prigen<br />
               <em style={{ fontWeight: 300, color: "#6B5846" }}>terasa berbeda.</em>
             </h2>
             <p className="text-[#6B5846] text-sm font-light max-w-xs sm:text-right" style={{ lineHeight: 1.85 }}>
@@ -147,7 +147,7 @@ export default function Activities() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1A0F07]/70 to-transparent" />
               <div className="absolute bottom-0 left-0 p-6">
-                <span className="text-[#B8962E] text-[9px] tracking-widest uppercase font-light block mb-2">Pagi · Desa Pandaan</span>
+                <span className="text-[#B8962E] text-[9px] tracking-widest uppercase font-light block mb-2">Pagi · Desa Prigen</span>
                 <h3 className="font-serif-display text-[#F5EFE6]" style={{ fontSize: "1.15rem", fontWeight: 400, lineHeight: 1.25 }}>
                   Desa yang Tenang
                 </h3>

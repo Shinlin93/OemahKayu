@@ -85,9 +85,9 @@ export const faqs = [
 ];
 
 export const accessRoutes = [
-  { city: "Dari Surabaya", time: "± 45 menit", via: "Tol Surabaya–Pandaan" },
-  { city: "Dari Sidoarjo", time: "± 35 menit", via: "Tol Sidoarjo–Pandaan" },
-  { city: "Dari Malang",   time: "± 40 menit", via: "Tol Pandaan–Malang" },
+  { city: "Dari Surabaya", time: "± 45 menit", via: "Tol Surabaya–Pandaan, keluar lanjut ke Prigen" },
+  { city: "Dari Sidoarjo", time: "± 35 menit", via: "Tol Sidoarjo–Pandaan, keluar lanjut ke Prigen" },
+  { city: "Dari Malang",   time: "± 40 menit", via: "Tol Pandaan–Malang, keluar lanjut ke Prigen" },
 ];
 
 export const nearbyPlaces = [

@@ -30,7 +30,7 @@ return ( <section id="lokasi" className="py-20 bg-[#F5EFE6]"> <div className="ma
           className="text-[#6B5846] font-light mb-10"
           style={{ lineHeight: 1.85, fontSize: 14 }}
         >
-          Berlokasi di Pandaan, Pasuruan, di kaki Gunung Penanggungan yang
+          Berlokasi di Prigen, Pasuruan, di kaki Gunung Penanggungan yang
           megah. Mudah dijangkau dari berbagai kota di Jawa Timur, namun
           terasa seperti dunia yang berbeda begitu Anda memasuki gerbangnya.
         </p>
