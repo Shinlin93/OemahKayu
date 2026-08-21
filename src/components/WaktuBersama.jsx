@@ -1,4 +1,4 @@
-import photoMalam from "../assets/halaman-belakang.jpeg";
+import photoMalam from "../assets/belakang-1.webp";
 import { IconBed, IconPool, IconBBQ, IconChevron } from "./Icons";
 import { scrollToSection } from "../hooks";
 
