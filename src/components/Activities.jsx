@@ -1,11 +1,11 @@
-import imgSekitar1    from "../assets/Sekitar-1.jpeg";
-import imgSekitar2    from "../assets/Sekitar-2.jpeg";
-import imgKeVilla     from "../assets/Ke-Villa.jpeg";
-import imgDepan1      from "../assets/Depan-1.jpeg";
-import imgDepan2      from "../assets/Depan-2.jpeg";
-import imgDepan3      from "../assets/Depan-3.jpeg";
-import imgDepanMalam  from "../assets/Depan-Malam.jpeg";
-import imgDepanMalam1 from "../assets/Depan-Malam1.jpeg";
+import imgSekitar1    from "../assets/Sekitar-1.webp";
+import imgSekitar2    from "../assets/Sekitar-2.webp";
+import imgKeVilla     from "../assets/Ke-Villa.webp";
+import imgDepan1      from "../assets/Depan-1.webp";
+import imgDepan2      from "../assets/Depan-2.webp";
+import imgDepan3      from "../assets/Depan-3.webp";
+import imgDepanMalam  from "../assets/Depan-Malam.webp";
+import imgDepanMalam1 from "../assets/Depan-Malam1.webp";
 
 export default function Activities() {
   return (
