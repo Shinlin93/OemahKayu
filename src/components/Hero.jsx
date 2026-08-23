@@ -1,16 +1,45 @@
 import { useState, useEffect } from "react";
-import heroDepan from "../assets/hero-depan.jpeg";
-import heroGunung from "../assets/hero-gunung.png";
-import heroMalam from "../assets/tampak-depan-malam.png";
-import { IconWhatsApp, IconCalendar } from "./Icons";
+import heroDepan from "../assets/hero-depan.webp";
+import heroGunung from "../assets/hero-gunung.webp";
+import heroMalam from "../assets/tampak-depan-malam.webp";
 import { WA_URL } from "../constants";
 
 // ─── DAFTAR FOTO HERO ────────────────────────────────────────────────────────
-// Tambah foto baru: 1) import foto-nya di atas, 2) masukkan ke array ini.
 const heroImages = [heroDepan, heroGunung, heroMalam];
-
-// Durasi tiap slide sebelum otomatis geser ke slide berikutnya (dalam ms)
 const SLIDE_DURATION = 6000;
+
+// ─── Jam & tanggal live ──────────────────────────────────────────────────────
+const DAYS = ["MINGGU", "SENIN", "SELASA", "RABU", "KAMIS", "JUMAT", "SABTU"];
+const MONTHS = [
+  "JAN", "FEB", "MAR", "APR", "MEI", "JUN",
+  "JUL", "AGU", "SEP", "OKT", "NOV", "DES",
+];
+
+function LiveClock() {
+  const [now, setNow] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const hh = String(now.getHours()).padStart(2, "0");
+  const mm = String(now.getMinutes()).padStart(2, "0");
+  const ss = String(now.getSeconds()).padStart(2, "0");
+  const dayName = DAYS[now.getDay()];
+  const dateStr = `${now.getDate()}.${MONTHS[now.getMonth()]}.${String(now.getFullYear()).slice(2)}`;
+
+  return (
+    <div className="text-white/90">
+      <p className="text-xs tracking-[0.15em] font-light" style={{ fontVariantNumeric: "tabular-nums" }}>
+        {hh}:{mm}:{ss} PRIGEN, ID
+      </p>
+      <p className="text-xs tracking-[0.15em] font-light text-white/60 mt-0.5">
+        {dayName}, {dateStr}
+      </p>
+    </div>
+  );
+}
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
@@ -41,95 +70,61 @@ export default function Hero() {
         />
       ))}
 
-      {/* Overlay tipis — cukup untuk jaga kontras dot & elemen luar box,
-          tidak menggelapkan foto sebanyak sebelumnya karena glass box
-          sudah punya kontrasnya sendiri */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/25" />
+      {/* Overlay tipis — cukup untuk kontras teks & navbar */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/5 to-black/35" />
 
-      {/* Content */}
-      <div className="relative z-10 min-h-screen flex items-center pt-40 md:pt-44 pb-20">
-        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-16">
+      {/* ── Konten ── */}
+      <div className="relative z-10 min-h-screen flex flex-col justify-between px-6 sm:px-10 lg:px-14 pt-28 pb-10">
 
-          {/* ── Glass Box ── */}
-          <div
-            className="max-w-lg rounded-2xl p-8 md:p-10"
-            style={{
-              background: "rgba(255,255,255,0.10)",
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
-              border: "1px solid rgba(255,255,255,0.20)",
-              boxShadow: "0 20px 50px rgba(0,0,0,0.25)",
-            }}
-          >
-            {/* Heading */}
-            <h1
-              className="font-serif-display text-white mb-4"
-              style={{
-                fontSize: "clamp(2rem, 4vw, 3rem)",
-                fontWeight: 400,
-                lineHeight: 1.2,
-              }}
-            >
-              Nikmati Tenangnya
-              <br />
-              Alam Penanggungan
-            </h1>
+        {/* Baris atas — kosong, navbar sudah fixed terpisah di atasnya */}
+        <div />
 
-            {/* Description */}
+        {/* Baris tengah — paragraf deskripsi, rata kanan seperti referensi */}
+        <div className="flex justify-end">
+          <div className="max-w-sm sm:max-w-md text-right sm:text-left">
             <p
-              className="text-white/85 font-light mb-8"
-              style={{ lineHeight: 1.8, fontSize: "0.95rem" }}
+              className="text-white font-light"
+              style={{ lineHeight: 1.85, fontSize: "0.95rem" }}
             >
-              Nikmati suasana tenang, udara sejuk, dan pemandangan
-              menakjubkan di Oemah Kayu Penanggungan.
+              Rumah kayu Jawa yang kami bangun dengan hati, menghadirkan
+              kolam renang pribadi, udara pegunungan yang sejuk, dan
+              panorama Gunung Penanggungan — dirancang untuk momen
+              berkualitas bersama orang-orang tercinta.
             </p>
 
-            {/* Buttons */}
-            <div className="flex flex-wrap gap-3">
-              <a
-                href={WA_URL}
-                target="_blank"
-                rel="noopener"
-                className="inline-flex items-center gap-2 bg-[#C9A87C] text-[#2C1A0E] px-5 py-3 rounded-lg text-sm font-medium hover:bg-[#D4B98C] hover:-translate-y-0.5 transition-all duration-300"
-              >
-                <IconCalendar />
-                Cek Ketersediaan
-              </a>
-              <a
-                href={WA_URL}
-                target="_blank"
-                rel="noopener"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg text-sm font-medium text-white transition-all duration-300"
-                style={{
-                  background: "rgba(255,255,255,0.10)",
-                  border: "1px solid rgba(255,255,255,0.25)",
-                }}
-              >
-                <IconWhatsApp />
-                Hubungi Kami
-              </a>
-            </div>
+            <a
+              href={WA_URL}
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center gap-2.5 mt-7 bg-white/95 text-[#2C1A0E] px-6 py-3.5 text-xs tracking-[0.15em] uppercase font-medium hover:bg-white transition-all duration-300"
+            >
+              <span className="text-sm">↘</span>
+              Cek Ketersediaan
+            </a>
           </div>
-
         </div>
+
+        {/* Baris bawah — jam live kiri, dot indicator kanan */}
+        <div className="flex items-end justify-between">
+          <LiveClock />
+
+          {heroImages.length > 1 && (
+            <div className="flex gap-2">
+              {heroImages.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  aria-label={`Lihat foto ${i + 1}`}
+                  className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer border-none ${
+                    current === i ? "w-8 bg-[#D4AE3A]" : "w-4 bg-white/40 hover:bg-white/60"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+
       </div>
-
-      {/* ── Dot indicator ── */}
-      {heroImages.length > 1 && (
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-          {heroImages.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              aria-label={`Lihat foto ${i + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer border-none ${
-                current === i ? "w-8 bg-[#D4AE3A]" : "w-4 bg-white/40 hover:bg-white/60"
-              }`}
-            />
-          ))}
-        </div>
-      )}
-
     </section>
   );
 }
