@@ -71,13 +71,13 @@ export default function Gallery() {
 
         {/* Gallery Grid */}
         <div
-          className="grid grid-cols-2 sm:grid-cols-4 gap-2"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-3"
           data-reveal
         >
           {galleryItems.map((g, i) => (
             <div
               key={i}
-              className={`relative overflow-hidden cursor-pointer group ${g.span ?? ""}`}
+              className={`relative overflow-hidden rounded-2xl cursor-pointer group ${g.span ?? ""}`}
               style={{ minHeight: g.height }}
             >
               <img

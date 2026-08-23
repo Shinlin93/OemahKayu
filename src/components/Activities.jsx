@@ -45,7 +45,7 @@ export default function Activities() {
           <div className="flex gap-3" style={{ height: 480 }}>
 
             {/* Foto besar — Sekitar-2 (sawah luas + gunung) */}
-            <div className="relative overflow-hidden flex-[1.6] group">
+            <div className="relative overflow-hidden rounded-2xl flex-[1.6] group">
               <img
                 src={imgSekitar2}
                 alt="Panorama sawah dan Gunung Penanggungan"
@@ -67,7 +67,7 @@ export default function Activities() {
 
             {/* Kolom kanan — 2 foto bertumpuk */}
             <div className="flex flex-col gap-3 flex-1">
-              <div className="relative overflow-hidden flex-1 group">
+              <div className="relative overflow-hidden rounded-2xl flex-1 group">
                 <img
                   src={imgSekitar1}
                   alt="Sawah pagi hari sekitar villa"
@@ -82,7 +82,7 @@ export default function Activities() {
                   <p className="font-serif-display text-[#F5EFE6] text-sm italic">Sawah & Langit Pagi</p>
                 </div>
               </div>
-              <div className="relative overflow-hidden flex-1 group">
+              <div className="relative overflow-hidden rounded-2xl flex-1 group">
                 <img
                   src={imgDepan1}
                   alt="View gunung dari depan villa"
@@ -114,7 +114,7 @@ export default function Activities() {
           <div className="flex gap-3 items-end" style={{ height: 380 }}>
 
             {/* Foto 1 — tinggi penuh */}
-            <div className="relative overflow-hidden group flex-1" style={{ height: "100%" }}>
+            <div className="relative overflow-hidden rounded-2xl group flex-1" style={{ height: "100%" }}>
               <img
                 src={imgKeVilla}
                 alt="Jalur jogging menuju villa"
@@ -136,7 +136,7 @@ export default function Activities() {
             </div>
 
             {/* Foto 2 — sedikit lebih pendek (naik dari bawah) */}
-            <div className="relative overflow-hidden group flex-1" style={{ height: "85%" }}>
+            <div className="relative overflow-hidden rounded-2xl group flex-1" style={{ height: "85%" }}>
               <img
                 src={imgDepan2}
                 alt="Jalan desa pagi hari dengan gunung"
@@ -155,7 +155,7 @@ export default function Activities() {
             </div>
 
             {/* Foto 3 — paling pendek, muncul dari bawah */}
-            <div className="relative overflow-hidden group flex-1" style={{ height: "70%" }}>
+            <div className="relative overflow-hidden rounded-2xl group flex-1" style={{ height: "70%" }}>
               <img
                 src={imgDepan3}
                 alt="Golden hour di jalur desa"
@@ -194,7 +194,7 @@ export default function Activities() {
           <div className="flex gap-3" style={{ height: 320 }}>
 
             {/* Teks narasi */}
-            <div className="flex flex-col justify-between bg-[#2C1A0E] p-8 flex-[0.8]">
+            <div className="flex flex-col justify-between bg-[#2C1A0E] rounded-2xl p-8 flex-[0.8]">
               <div>
                 <h3
                   className="font-serif-display text-[#F5EFE6] mb-4"
@@ -219,7 +219,7 @@ export default function Activities() {
             </div>
 
             {/* Foto malam 1 */}
-            <div className="relative overflow-hidden flex-1 group">
+            <div className="relative overflow-hidden rounded-2xl flex-1 group">
               <img
                 src={imgDepanMalam}
                 alt="Suasana malam villa kayu Jawa"
@@ -232,7 +232,7 @@ export default function Activities() {
             </div>
 
             {/* Foto malam 2 */}
-            <div className="relative overflow-hidden flex-1 group">
+            <div className="relative overflow-hidden rounded-2xl flex-1 group">
               <img
                 src={imgDepanMalam1}
                 alt="Ping pong dan halaman villa malam hari"
