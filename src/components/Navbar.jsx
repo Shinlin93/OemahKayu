@@ -1,5 +1,4 @@
 import { useState } from "react";
-import logo from "../logo.png";
 import { IconMenu, IconClose } from "./Icons";
 import { navLinks } from "../data";
 import { WA_URL } from "../constants";
@@ -33,23 +32,34 @@ export default function Navbar() {
               e.preventDefault();
               handleNav("hero");
             }}
-            className="flex items-center gap-2.5 flex-shrink-0"
+            className="flex items-center gap-3 flex-shrink-0"
           >
             <img
-              src={logo}
-              alt="Oemah Kayu Penanggungan"
+              src="/logo-icon.png"
+              alt=""
+              aria-hidden="true"
               className={`w-auto object-contain transition-all duration-500 ${
-                scrolled ? "h-11" : "h-12"
+                scrolled ? "h-9" : "h-10"
               }`}
               style={{ filter: scrolled ? "none" : "brightness(0) invert(1)" }}
             />
-            <span
-              className={`hidden sm:block text-xs tracking-[0.25em] uppercase font-medium transition-colors duration-500 ${
-                scrolled ? "text-[#2C1A0E]" : "text-white"
-              }`}
-            >
-              Oemah Kayu
-            </span>
+            <div className="flex flex-col leading-none">
+              <span
+                className={`font-serif-display transition-colors duration-500 ${
+                  scrolled ? "text-[#2C1A0E]" : "text-white"
+                }`}
+                style={{ fontSize: "1.35rem", fontWeight: 500, letterSpacing: "0.02em" }}
+              >
+                Oemah Kayu
+              </span>
+              <span
+                className={`text-[9px] tracking-[0.3em] uppercase font-light mt-0.5 transition-colors duration-500 ${
+                  scrolled ? "text-[#B8962E]" : "text-white/70"
+                }`}
+              >
+                Penanggungan
+              </span>
+            </div>
           </a>
 
           {/* Desktop Menu */}
