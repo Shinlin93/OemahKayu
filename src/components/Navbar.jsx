@@ -18,8 +18,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[#F8F5EF]/80 backdrop-blur-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.08)] border-b border-[#2C1A0E]/10"
-          : "bg-white/5 backdrop-blur-md border-b border-white/10"
+          ? "bg-[#F8F5EF]/80 backdrop-blur-md border-b border-[#2C1A0E]/5"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10">
@@ -62,29 +62,31 @@ export default function Navbar() {
             </div>
           </a>
 
-          {/* Desktop Menu — Glassmorphism Style like Supaste */}
-          <nav className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.06)]">
-            {navLinks.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => handleNav(link.id)}
-                className={`px-4 py-2 text-[11px] tracking-[0.15em] uppercase font-medium rounded-full transition-all duration-300 bg-transparent border-none cursor-pointer ${
-                  scrolled
-                    ? "text-[#2C1A0E] hover:bg-[#2C1A0E]/10 hover:text-[#B8962E]"
-                    : "text-white/90 hover:bg-white/15 hover:text-white"
-                }`}
-              >
-                {link.label}
-              </button>
-            ))}
-          </nav>
+          {/* Desktop Menu - Dynamic Island Style */}
+          <div className="hidden lg:flex items-center justify-center flex-1">
+            <nav className="flex items-center gap-1 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.08)] transition-all duration-300 hover:bg-white/15">
+              {navLinks.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => handleNav(link.id)}
+                  className={`px-4 py-2 text-[11px] tracking-[0.15em] uppercase font-medium rounded-full transition-all duration-300 bg-transparent border-none cursor-pointer whitespace-nowrap ${
+                    scrolled
+                      ? "text-[#2C1A0E] hover:bg-[#2C1A0E]/10 hover:text-[#B8962E]"
+                      : "text-white/90 hover:bg-white/15 hover:text-white"
+                  }`}
+                >
+                  {link.label}
+                </button>
+              ))}
+            </nav>
+          </div>
 
-          {/* CTA — Glassmorphism style */}
+          {/* CTA - Minimalis seperti di gambar */}
           <a
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className={`hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[11px] tracking-[0.15em] uppercase font-medium transition-all duration-300 ${
+            className={`hidden lg:inline-flex items-center gap-2 px-5 py-2 rounded-full text-[11px] tracking-[0.15em] uppercase font-medium transition-all duration-300 ${
               scrolled
                 ? "bg-[#2C1A0E] text-[#F5EFE6] hover:bg-[#3D2A1A] shadow-lg"
                 : "bg-white/15 backdrop-blur-md border border-white/20 text-white hover:bg-white/25 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)]"
@@ -108,7 +110,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu — Glassmorphism */}
+      {/* Mobile Menu - Dynamic Island Style */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-500 ${
           menuOpen
