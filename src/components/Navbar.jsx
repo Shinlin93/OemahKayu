@@ -18,14 +18,14 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[#F8F5EF]/80 backdrop-blur-md border-b border-[#2C1A0E]/5"
-          : "bg-transparent"
+          ? "bg-black/80 backdrop-blur-2xl border-b border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]"
+          : "bg-black/40 backdrop-blur-md border-b border-white/5"
       }`}
     >
       <div className="max-w-[1600px] mx-auto px-6 lg:px-10">
         <div className="h-20 flex items-center justify-between">
 
-          {/* Logo */}
+          {/* Logo - Oemah Kayu dengan warna putih */}
           <a
             href="#"
             onClick={(e) => {
@@ -38,59 +38,44 @@ export default function Navbar() {
               src="/logo-icon.png"
               alt=""
               aria-hidden="true"
-              className={`w-auto object-contain transition-all duration-500 ${
-                scrolled ? "h-9" : "h-10"
-              }`}
-              style={{ filter: scrolled ? "none" : "brightness(0) invert(1)" }}
+              className="w-auto h-10 object-contain transition-all duration-500"
+              style={{ filter: "brightness(0) invert(1)" }}
             />
             <div className="flex flex-col leading-none">
               <span
-                className={`font-serif-display transition-colors duration-500 ${
-                  scrolled ? "text-[#2C1A0E]" : "text-white"
-                }`}
+                className="font-serif-display text-white transition-colors duration-500"
                 style={{ fontSize: "1.35rem", fontWeight: 500, letterSpacing: "0.02em" }}
               >
                 Oemah Kayu
               </span>
               <span
-                className={`text-[9px] tracking-[0.3em] uppercase font-light mt-0.5 transition-colors duration-500 ${
-                  scrolled ? "text-[#B8962E]" : "text-white/70"
-                }`}
+                className="text-[9px] tracking-[0.3em] uppercase font-light mt-0.5 text-white/70"
               >
                 Penanggungan
               </span>
             </div>
           </a>
 
-          {/* Desktop Menu - Dynamic Island Style */}
-          <div className="hidden lg:flex items-center justify-center flex-1">
-            <nav className="flex items-center gap-1 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.08)] transition-all duration-300 hover:bg-white/15">
-              {navLinks.map((link) => (
-                <button
-                  key={link.id}
-                  onClick={() => handleNav(link.id)}
-                  className={`px-4 py-2 text-[11px] tracking-[0.15em] uppercase font-medium rounded-full transition-all duration-300 bg-transparent border-none cursor-pointer whitespace-nowrap ${
-                    scrolled
-                      ? "text-[#2C1A0E] hover:bg-[#2C1A0E]/10 hover:text-[#B8962E]"
-                      : "text-white/90 hover:bg-white/15 hover:text-white"
-                  }`}
-                >
-                  {link.label}
-                </button>
-              ))}
-            </nav>
-          </div>
+          {/* Desktop Menu - Full Glass seperti Supaste */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <button
+                key={link.id}
+                onClick={() => handleNav(link.id)}
+                className="relative text-[12px] tracking-[0.15em] font-medium transition-all duration-300 bg-transparent border-none cursor-pointer text-white/80 hover:text-white hover:scale-105"
+              >
+                {link.label}
+                <span className="absolute left-0 -bottom-1 h-px w-0 bg-white/50 group-hover:w-full transition-all duration-300" />
+              </button>
+            ))}
+          </nav>
 
-          {/* CTA - Minimalis seperti di gambar */}
+          {/* CTA - Button dengan efek glass */}
           <a
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className={`hidden lg:inline-flex items-center gap-2 px-5 py-2 rounded-full text-[11px] tracking-[0.15em] uppercase font-medium transition-all duration-300 ${
-              scrolled
-                ? "bg-[#2C1A0E] text-[#F5EFE6] hover:bg-[#3D2A1A] shadow-lg"
-                : "bg-white/15 backdrop-blur-md border border-white/20 text-white hover:bg-white/25 shadow-[0_8px_32px_0_rgba(0,0,0,0.1)]"
-            }`}
+            className="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-[11px] tracking-[0.15em] uppercase font-medium transition-all duration-300 bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 hover:scale-105 shadow-[0_8px_32px_0_rgba(0,0,0,0.2)]"
           >
             Booking
             <span className="text-sm">↗</span>
@@ -98,11 +83,7 @@ export default function Navbar() {
 
           {/* Mobile Button */}
           <button
-            className={`lg:hidden p-2 rounded-full transition-colors duration-300 ${
-              scrolled
-                ? "text-[#2C1A0E] hover:bg-[#2C1A0E]/10"
-                : "text-white hover:bg-white/10"
-            }`}
+            className="lg:hidden p-2 rounded-full transition-colors duration-300 text-white hover:bg-white/10"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? <IconClose /> : <IconMenu />}
@@ -110,7 +91,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu - Dynamic Island Style */}
+      {/* Mobile Menu - Glass Effect */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-500 ${
           menuOpen
@@ -118,17 +99,13 @@ export default function Navbar() {
             : "max-h-0 opacity-0"
         }`}
       >
-        <div className="mx-6 rounded-2xl bg-white/10 backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.12)] p-5">
+        <div className="mx-6 rounded-2xl bg-black/60 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] p-5">
           <div className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => handleNav(link.id)}
-                className={`text-left px-4 py-3 rounded-xl text-sm uppercase tracking-[0.15em] transition-all duration-300 bg-transparent border-none cursor-pointer ${
-                  scrolled
-                    ? "text-[#2C1A0E] hover:bg-[#2C1A0E]/10"
-                    : "text-white/90 hover:bg-white/15"
-                }`}
+                className="text-left px-4 py-3 rounded-xl text-sm uppercase tracking-[0.15em] transition-all duration-300 bg-transparent border-none cursor-pointer text-white/80 hover:bg-white/10 hover:text-white"
               >
                 {link.label}
               </button>
@@ -138,11 +115,7 @@ export default function Navbar() {
               href={WA_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center justify-center gap-2 mt-2 py-3.5 rounded-xl text-sm uppercase tracking-[0.15em] font-medium transition-all duration-300 ${
-                scrolled
-                  ? "bg-[#2C1A0E] text-[#F5EFE6] hover:bg-[#3D2A1A]"
-                  : "bg-white/15 backdrop-blur-md border border-white/20 text-white hover:bg-white/25"
-              }`}
+              className="flex items-center justify-center gap-2 mt-2 py-3.5 rounded-xl text-sm uppercase tracking-[0.15em] font-medium transition-all duration-300 bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20"
             >
               Booking ↗
             </a>
