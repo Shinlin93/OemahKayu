@@ -7,11 +7,18 @@ import { useScrolled } from "../hooks";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState(null);
   const scrolled = useScrolled(60);
 
   const handleNav = (id) => {
+    setActiveLink(id);
     scrollToSection(id);
     setMenuOpen(false);
+    
+    // Reset active state after animation
+    setTimeout(() => {
+      setActiveLink(null);
+    }, 1500);
   };
 
   return (
@@ -73,16 +80,65 @@ export default function Navbar() {
                 }`}
               >
                 {link.label}
+                
+                {/* Underline */}
                 <span
                   className={`absolute left-0 -bottom-1.5 h-px w-0 group-hover:w-full transition-all duration-300 ${
                     scrolled ? "bg-[#B8962E]" : "bg-white"
                   }`}
                 />
+                
+                {/* Wind Swirl Effect - Active State */}
+                {activeLink === link.id && (
+                  <span className="absolute inset-0 pointer-events-none">
+                    {/* Main spinning circle */}
+                    <span 
+                      className="absolute inset-[-8px] rounded-full border-2 opacity-70 animate-spin"
+                      style={{ 
+                        animationDuration: '0.8s',
+                        animationTimingFunction: 'cubic-bezier(0.65, 0, 0.35, 1)',
+                        borderColor: scrolled ? '#B8962E' : '#FFFFFF'
+                      }}
+                    />
+                    
+                    {/* Secondary orbit - larger and slower */}
+                    <span 
+                      className="absolute inset-[-18px] rounded-full border opacity-30 animate-spin"
+                      style={{ 
+                        animationDuration: '1.2s',
+                        animationDirection: 'reverse',
+                        borderColor: scrolled ? '#B8962E' : '#FFFFFF'
+                      }}
+                    />
+                    
+                    {/* Wind dots on cardinal points */}
+                    <span className="absolute -top-4 left-1/2 -translate-x-1/2">
+                      <span className="block w-1.5 h-1.5 rounded-full bg-[#B8962E] animate-pulse" />
+                    </span>
+                    <span className="absolute top-1/2 -right-4 -translate-y-1/2">
+                      <span className="block w-1.5 h-1.5 rounded-full bg-[#B8962E] animate-pulse" style={{ animationDelay: '0.2s' }} />
+                    </span>
+                    <span className="absolute -bottom-4 left-1/2 -translate-x-1/2">
+                      <span className="block w-1.5 h-1.5 rounded-full bg-[#B8962E] animate-pulse" style={{ animationDelay: '0.4s' }} />
+                    </span>
+                    <span className="absolute top-1/2 -left-4 -translate-y-1/2">
+                      <span className="block w-1.5 h-1.5 rounded-full bg-[#B8962E] animate-pulse" style={{ animationDelay: '0.6s' }} />
+                    </span>
+                    
+                    {/* Wind swirl particles */}
+                    <span className="absolute -top-5 left-1/2 -translate-x-1/2 text-[#B8962E] text-[8px] animate-spin" style={{ animationDuration: '0.6s' }}>
+                      ⟳
+                    </span>
+                    <span className="absolute bottom-5 right-1/2 translate-x-1/2 text-[#B8962E] text-[8px] animate-spin" style={{ animationDuration: '0.7s', animationDirection: 'reverse' }}>
+                      ⟳
+                    </span>
+                  </span>
+                )}
               </button>
             ))}
           </nav>
 
-          {/* CTA — minimalis, teks + panah, bukan pill besar */}
+          {/* CTA - minimalis */}
           <a
             href={WA_URL}
             target="_blank"
@@ -116,9 +172,14 @@ export default function Navbar() {
             <button
               key={link.id}
               onClick={() => handleNav(link.id)}
-              className="text-[#2C1A0E] text-sm uppercase tracking-[0.2em] border-b border-[#2C1A0E]/10 pb-4 text-left bg-transparent border-none cursor-pointer"
+              className="text-[#2C1A0E] text-sm uppercase tracking-[0.2em] border-b border-[#2C1A0E]/10 pb-4 text-left bg-transparent border-none cursor-pointer relative"
             >
               {link.label}
+              
+              {/* Mobile active indicator */}
+              {activeLink === link.id && (
+                <span className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#B8962E] animate-ping" />
+              )}
             </button>
           ))}
 
