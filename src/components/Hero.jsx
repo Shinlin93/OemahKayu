@@ -74,7 +74,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/5 to-black/35" />
 
       {/* ── Konten ── */}
-      <div className="relative z-10 min-h-screen flex flex-col justify-between px-6 sm:px-10 lg:px-14 pt-28 pb-10">
+      <div className="relative z-10 min-h-screen flex flex-col justify-between px-6 sm:px-10 lg:px-14 pt-24 pb-10">
 
         {/* Baris atas — kosong, navbar sudah fixed terpisah di atasnya */}
         <div />
