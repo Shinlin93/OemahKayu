@@ -1,100 +1,114 @@
-import { useState } from "react";
-import { IconMenu, IconClose, IconWhatsApp } from "./Icons";
+import { useState, useRef } from "react";
+import { IconMenu, IconClose } from "./Icons";
 import { navLinks } from "../data";
-import { WA_URL } from "../constants";
 import { scrollToSection } from "../hooks";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef(null);
 
   const handleNav = (id) => {
     scrollToSection(id);
     setMenuOpen(false);
   };
 
-  return (
-    <header className="fixed top-4 sm:top-6 left-0 right-0 z-50 px-4">
-      <div className="max-w-4xl mx-auto">
+  // ── Efek "liquid glass" ala iOS — highlight cahaya mengikuti kursor ──
+  const handleMouseMove = (e) => {
+    const el = navRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    el.style.setProperty("--mx", `${x}%`);
+    el.style.setProperty("--my", `${y}%`);
+    el.style.setProperty("--glow-opacity", "1");
+  };
 
-        {/* ── Pill mengambang — glassmorphism ── */}
+  const handleMouseLeave = () => {
+    const el = navRef.current;
+    if (!el) return;
+    el.style.setProperty("--glow-opacity", "0");
+  };
+
+  return (
+    <header className="fixed top-0 left-1/2 -translate-x-1/2 z-50">
+
+      {/* ── Desktop: tab kaca nempel di ujung atas, rounded cuma di bawah ── */}
+      <nav
+        ref={navRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className="relative hidden lg:flex items-center gap-8 px-9 pt-4 pb-3.5 rounded-b-[28px] overflow-hidden"
+        style={{
+          "--mx": "50%",
+          "--my": "50%",
+          "--glow-opacity": "0",
+          background: "rgba(26,15,7,0.28)",
+          backdropFilter: "blur(22px) saturate(160%)",
+          WebkitBackdropFilter: "blur(22px) saturate(160%)",
+          borderLeft: "1px solid rgba(255,255,255,0.18)",
+          borderRight: "1px solid rgba(255,255,255,0.18)",
+          borderBottom: "1px solid rgba(255,255,255,0.18)",
+          boxShadow: "0 8px 24px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.15)",
+        }}
+      >
+        {/* Highlight cahaya mengikuti kursor — efek "kaca pembesar" */}
         <div
-          className="flex items-center justify-between gap-4 px-5 sm:px-6 py-3 rounded-full transition-all duration-300"
+          className="absolute inset-0 pointer-events-none transition-opacity duration-300"
           style={{
-            background: "rgba(26,15,7,0.55)",
-            backdropFilter: "blur(18px)",
-            WebkitBackdropFilter: "blur(18px)",
-            border: "1px solid rgba(255,255,255,0.12)",
-            boxShadow: "0 8px 32px rgba(0,0,0,0.25)",
+            opacity: "var(--glow-opacity)",
+            background:
+              "radial-gradient(circle 120px at var(--mx) var(--my), rgba(255,255,255,0.35), rgba(255,255,255,0.08) 45%, transparent 70%)",
+            mixBlendMode: "overlay",
+          }}
+        />
+
+        {navLinks.map((link) => (
+          <button
+            key={link.id}
+            onClick={() => handleNav(link.id)}
+            className="relative text-white/75 hover:text-white text-[13px] font-light tracking-wide transition-colors duration-200 bg-transparent border-none cursor-pointer whitespace-nowrap"
+          >
+            {link.label}
+          </button>
+        ))}
+      </nav>
+
+      {/* ── Mobile: burger nempel di ujung atas, sama gaya ── */}
+      <div className="lg:hidden">
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Menu"
+          className="flex items-center justify-center px-6 pt-4 pb-3.5 rounded-b-[24px] text-white border-none cursor-pointer"
+          style={{
+            background: "rgba(26,15,7,0.32)",
+            backdropFilter: "blur(22px) saturate(160%)",
+            WebkitBackdropFilter: "blur(22px) saturate(160%)",
+            borderLeft: "1px solid rgba(255,255,255,0.18)",
+            borderRight: "1px solid rgba(255,255,255,0.18)",
+            borderBottom: "1px solid rgba(255,255,255,0.18)",
+            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.15)",
           }}
         >
-          {/* Logo */}
-          <a
-            href="#"
-            onClick={(e) => { e.preventDefault(); handleNav("hero"); }}
-            className="flex items-center gap-2.5 flex-shrink-0"
-          >
-            <img
-              src="/logo-icon.png"
-              alt=""
-              aria-hidden="true"
-              className="h-6 w-auto object-contain"
-              style={{ filter: "brightness(0) invert(1)" }}
-            />
-            <span
-              className="text-white font-serif-display hidden sm:block"
-              style={{ fontSize: "1.05rem", fontWeight: 500 }}
-            >
-              Oemah Kayu
-            </span>
-          </a>
+          {menuOpen ? <IconClose /> : <IconMenu />}
+        </button>
 
-          {/* Desktop nav links */}
-          <nav className="hidden lg:flex items-center gap-7">
-            {navLinks.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => handleNav(link.id)}
-                className="text-white/70 hover:text-white text-[13px] font-light transition-colors duration-200 bg-transparent border-none cursor-pointer whitespace-nowrap"
-              >
-                {link.label}
-              </button>
-            ))}
-          </nav>
-
-          {/* CTA — pill putih solid, kontras dengan kaca gelap */}
-          <a
-            href={WA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-2 bg-white text-[#2C1A0E] px-4 py-2 rounded-full text-[13px] font-medium hover:bg-white/90 transition-all duration-200 flex-shrink-0"
-          >
-            <IconWhatsApp />
-            Booking
-          </a>
-
-          {/* Mobile burger */}
-          <button
-            className="lg:hidden text-white flex-shrink-0"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Menu"
-          >
-            {menuOpen ? <IconClose /> : <IconMenu />}
-          </button>
-        </div>
-
-        {/* ── Dropdown mobile — glass juga, muncul di bawah pill ── */}
+        {/* Dropdown mobile */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-400 ease-in-out ${
-            menuOpen ? "max-h-96 mt-3 opacity-100" : "max-h-0 opacity-0"
+          className={`absolute left-1/2 -translate-x-1/2 overflow-hidden transition-all duration-400 ease-in-out ${
+            menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
+          style={{ width: "min(88vw, 320px)" }}
         >
           <div
-            className="flex flex-col gap-1 p-4 rounded-3xl"
+            className="flex flex-col gap-1 p-4 rounded-b-3xl"
             style={{
-              background: "rgba(26,15,7,0.75)",
-              backdropFilter: "blur(18px)",
-              WebkitBackdropFilter: "blur(18px)",
-              border: "1px solid rgba(255,255,255,0.12)",
+              background: "rgba(26,15,7,0.55)",
+              backdropFilter: "blur(22px) saturate(160%)",
+              WebkitBackdropFilter: "blur(22px) saturate(160%)",
+              borderLeft: "1px solid rgba(255,255,255,0.18)",
+              borderRight: "1px solid rgba(255,255,255,0.18)",
+              borderBottom: "1px solid rgba(255,255,255,0.18)",
             }}
           >
             {navLinks.map((link) => (
@@ -106,19 +120,11 @@ export default function Navbar() {
                 {link.label}
               </button>
             ))}
-            <a
-              href={WA_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-white text-[#2C1A0E] py-3 rounded-full text-sm font-medium mt-3"
-            >
-              <IconWhatsApp />
-              Booking
-            </a>
           </div>
         </div>
-
       </div>
+
     </header>
   );
 }
+
