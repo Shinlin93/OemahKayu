@@ -16,7 +16,7 @@ export default function Footer() {
         />
 
         <p className="text-[#B8962E] text-xs tracking-[0.3em] uppercase font-light mb-8">
-          Prigen · Pasuruan · Jawa Timur · Sejak 2024
+          Pandaan · Pasuruan · Jawa Timur · Sejak 2024
         </p>
 
         {/* Nav links */}
@@ -25,7 +25,7 @@ export default function Footer() {
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              className="text-[#F5EFE6]/30 hover:text-[#B8962E] text-xs tracking-widest uppercase font-light transition-colors duration-300 bg-transparent border-none cursor-pointer"
+              className="text-[#F5EFE6]/55 hover:text-[#B8962E] text-xs tracking-widest uppercase font-light transition-colors duration-300 bg-transparent border-none cursor-pointer"
             >
               {link.label}
             </button>
@@ -37,14 +37,14 @@ export default function Footer() {
           href={WA_URL}
           target="_blank"
           rel="noopener"
-          className="inline-flex items-center gap-2 text-[#B8962E]/60 hover:text-[#B8962E] text-xs tracking-widest uppercase font-light transition-colors duration-300 mb-8"
+          className="inline-flex items-center gap-2 text-[#B8962E]/80 hover:text-[#B8962E] text-xs tracking-widest uppercase font-light transition-colors duration-300 mb-8"
         >
           WhatsApp
         </a>
 
         <div className="w-full h-px bg-[#F5EFE6]/6 mb-6" />
 
-        <p className="text-[#F5EFE6]/20 text-xs font-light">
+        <p className="text-[#F5EFE6]/45 text-xs font-light">
           © 2025 Oemah Kayu Penanggungan. Semua hak dilindungi.
         </p>
       </div>

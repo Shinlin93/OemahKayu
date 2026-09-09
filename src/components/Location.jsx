@@ -3,7 +3,7 @@ import { IconLocation, IconWhatsApp } from "./Icons";
 import { WA_URL } from "../constants";
 
 export default function Location() {
-return ( <section id="lokasi" className="py-20 bg-[#F5EFE6]"> <div className="max-w-7xl mx-auto px-6 sm:px-8"> <div className="grid lg:grid-cols-2 gap-16 items-start">
+return ( <section id="lokasi" className="py-20 bg-[#F5EFE6] border-t border-[#2C1A0E]/8"> <div className="max-w-7xl mx-auto px-6 sm:px-8"> <div className="grid lg:grid-cols-2 gap-16 items-start">
 
       {/* Kiri */}
       <div>
@@ -30,7 +30,7 @@ return ( <section id="lokasi" className="py-20 bg-[#F5EFE6]"> <div className="ma
           className="text-[#6B5846] font-light mb-10"
           style={{ lineHeight: 1.85, fontSize: 14 }}
         >
-          Berlokasi di Prigen, Pasuruan, di kaki Gunung Penanggungan yang
+          Berlokasi di Pandaan, Pasuruan, di kaki Gunung Penanggungan yang
           megah. Mudah dijangkau dari berbagai kota di Jawa Timur, namun
           terasa seperti dunia yang berbeda begitu Anda memasuki gerbangnya.
         </p>

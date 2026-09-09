@@ -1,11 +1,12 @@
-import imgSekitar1    from "../assets/Sekitar-1.webp";
-import imgSekitar2    from "../assets/Sekitar-2.webp";
-import imgKeVilla     from "../assets/Ke-Villa.webp";
-import imgDepan1      from "../assets/Depan-1.webp";
-import imgDepan2      from "../assets/Depan-2.webp";
-import imgDepan3      from "../assets/Depan-3.webp";
-import imgDepanMalam  from "../assets/Depan-Malam.webp";
-import imgDepanMalam1 from "../assets/Depan-Malam1.webp";
+import imgSekitar1    from "../assets/Sekitar-1.jpeg";
+import imgSekitar2    from "../assets/Sekitar-2.jpeg";
+import imgKeVilla     from "../assets/Ke-Villa.jpeg";
+import imgDepan1      from "../assets/Depan-1.jpeg";
+import imgDepan2      from "../assets/Depan-2.jpeg";
+import imgDepan3      from "../assets/Depan-3.jpeg";
+import imgDepanMalam  from "../assets/Depan-Malam.jpeg";
+import imgDepanMalam1 from "../assets/Depan-Malam1.jpeg";
+import { IconPool, IconBBQ, IconGarden, IconMountain, IconBilliard, IconPingPong } from "./Icons";
 
 export default function Activities() {
   return (
@@ -22,7 +23,7 @@ export default function Activities() {
               className="font-serif-display text-[#2C1A0E]"
               style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.4rem)", fontWeight: 400, lineHeight: 1.15 }}
             >
-              Pagi di Prigen<br />
+              Pagi di Pandaan<br />
               <em style={{ fontWeight: 300, color: "#6B5846" }}>terasa berbeda.</em>
             </h2>
             <p className="text-[#6B5846] text-sm font-light max-w-xs sm:text-right" style={{ lineHeight: 1.85 }}>
@@ -41,11 +42,11 @@ export default function Activities() {
             01 · Panorama Alam
           </p>
 
-          {/* Mosaic: foto besar kiri + 2 foto kanan vertikal */}
-          <div className="flex gap-3" style={{ height: 480 }}>
+          {/* Mosaic: foto besar kiri + 2 foto kanan vertikal (stack di mobile) */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:h-[480px]">
 
             {/* Foto besar — Sekitar-2 (sawah luas + gunung) */}
-            <div className="relative overflow-hidden rounded-2xl flex-[1.6] group">
+            <div className="relative overflow-hidden group h-[260px] sm:h-auto sm:flex-[1.6]">
               <img
                 src={imgSekitar2}
                 alt="Panorama sawah dan Gunung Penanggungan"
@@ -66,8 +67,8 @@ export default function Activities() {
             </div>
 
             {/* Kolom kanan — 2 foto bertumpuk */}
-            <div className="flex flex-col gap-3 flex-1">
-              <div className="relative overflow-hidden rounded-2xl flex-1 group">
+            <div className="flex flex-col gap-3 sm:flex-1">
+              <div className="relative overflow-hidden group h-[200px] sm:h-auto sm:flex-1">
                 <img
                   src={imgSekitar1}
                   alt="Sawah pagi hari sekitar villa"
@@ -82,7 +83,7 @@ export default function Activities() {
                   <p className="font-serif-display text-[#F5EFE6] text-sm italic">Sawah & Langit Pagi</p>
                 </div>
               </div>
-              <div className="relative overflow-hidden rounded-2xl flex-1 group">
+              <div className="relative overflow-hidden group h-[200px] sm:h-auto sm:flex-1">
                 <img
                   src={imgDepan1}
                   alt="View gunung dari depan villa"
@@ -103,18 +104,18 @@ export default function Activities() {
         </div>
 
         {/* ══════════════════════════════════════════
-            BLOK 2 — Jogging & Jalan Pagi (horizontal scroll feel)
+            BLOK 2 — Jogging & Jalan Pagi
         ══════════════════════════════════════════ */}
         <div className="mb-4" data-reveal>
           <p className="text-[#B8962E] text-[10px] tracking-[0.45em] uppercase font-light mb-5 mt-10">
             02 · Jogging & Jalan Pagi
           </p>
 
-          {/* 3 foto horizontal — tinggi bervariasi dengan offset */}
-          <div className="flex gap-3 items-end" style={{ height: 380 }}>
+          {/* 3 foto — stack di mobile, horizontal dengan offset tinggi di desktop */}
+          <div className="flex flex-col sm:flex-row sm:items-end gap-3 sm:h-[380px]">
 
             {/* Foto 1 — tinggi penuh */}
-            <div className="relative overflow-hidden rounded-2xl group flex-1" style={{ height: "100%" }}>
+            <div className="relative overflow-hidden group sm:flex-1 h-[220px] sm:h-full">
               <img
                 src={imgKeVilla}
                 alt="Jalur jogging menuju villa"
@@ -136,7 +137,7 @@ export default function Activities() {
             </div>
 
             {/* Foto 2 — sedikit lebih pendek (naik dari bawah) */}
-            <div className="relative overflow-hidden rounded-2xl group flex-1" style={{ height: "85%" }}>
+            <div className="relative overflow-hidden group sm:flex-1 h-[220px] sm:h-[85%]">
               <img
                 src={imgDepan2}
                 alt="Jalan desa pagi hari dengan gunung"
@@ -147,7 +148,7 @@ export default function Activities() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1A0F07]/70 to-transparent" />
               <div className="absolute bottom-0 left-0 p-6">
-                <span className="text-[#B8962E] text-[9px] tracking-widest uppercase font-light block mb-2">Pagi · Desa Prigen</span>
+                <span className="text-[#B8962E] text-[9px] tracking-widest uppercase font-light block mb-2">Pagi · Desa Pandaan</span>
                 <h3 className="font-serif-display text-[#F5EFE6]" style={{ fontSize: "1.15rem", fontWeight: 400, lineHeight: 1.25 }}>
                   Desa yang Tenang
                 </h3>
@@ -155,7 +156,7 @@ export default function Activities() {
             </div>
 
             {/* Foto 3 — paling pendek, muncul dari bawah */}
-            <div className="relative overflow-hidden rounded-2xl group flex-1" style={{ height: "70%" }}>
+            <div className="relative overflow-hidden group sm:flex-1 h-[220px] sm:h-[70%]">
               <img
                 src={imgDepan3}
                 alt="Golden hour di jalur desa"
@@ -191,10 +192,10 @@ export default function Activities() {
             03 · Malam di Villa
           </p>
 
-          <div className="flex gap-3" style={{ height: 320 }}>
+          <div className="flex flex-col sm:flex-row gap-3 sm:h-[320px]">
 
             {/* Teks narasi */}
-            <div className="flex flex-col justify-between bg-[#2C1A0E] rounded-2xl p-8 flex-[0.8]">
+            <div className="flex flex-col justify-between bg-[#2C1A0E] p-8 sm:flex-[0.8]">
               <div>
                 <h3
                   className="font-serif-display text-[#F5EFE6] mb-4"
@@ -209,7 +210,7 @@ export default function Activities() {
                   yang menenangkan.
                 </p>
               </div>
-              <div className="flex gap-4 mt-4">
+              <div className="flex gap-4 mt-4 flex-wrap">
                 {["Ping Pong", "BBQ Area", "Biliar", "Teras Kayu"].map((f, i) => (
                   <span key={i} className="text-[#B8962E] text-[9px] tracking-widest uppercase font-light border-b border-[#B8962E]/30 pb-0.5">
                     {f}
@@ -219,7 +220,7 @@ export default function Activities() {
             </div>
 
             {/* Foto malam 1 */}
-            <div className="relative overflow-hidden rounded-2xl flex-1 group">
+            <div className="relative overflow-hidden group h-[240px] sm:h-auto sm:flex-1">
               <img
                 src={imgDepanMalam}
                 alt="Suasana malam villa kayu Jawa"
@@ -232,7 +233,7 @@ export default function Activities() {
             </div>
 
             {/* Foto malam 2 */}
-            <div className="relative overflow-hidden rounded-2xl flex-1 group">
+            <div className="relative overflow-hidden group h-[240px] sm:h-auto sm:flex-1">
               <img
                 src={imgDepanMalam1}
                 alt="Ping pong dan halaman villa malam hari"
@@ -252,18 +253,19 @@ export default function Activities() {
           </div>
         </div>
 
-        {/* ── Fasilitas tambahan (teks kecil, bukan card kotak) ── */}
+        {/* ── Fasilitas tambahan (ikon konsisten dengan set custom, bukan emoji) ── */}
         <div className="mt-10 pt-8 border-t border-[#2C1A0E]/8 flex flex-wrap gap-x-10 gap-y-3" data-reveal>
           {[
-            "Kolam Renang Pribadi",
-            "Meja Biliar",
-            "Ping Pong Outdoor",
-            "Area BBQ",
-            "Taman & Halaman Luas",
-            "Wisata Gunung Penanggungan · ± 15 mnt",
-          ].map((label, i) => (
-            <div key={i} className="flex items-center">
-              <span className="text-[#6B5846] text-xs font-light tracking-wide">{label}</span>
+            { icon: <IconPool />, label: "Kolam Renang Pribadi" },
+            { icon: <IconBilliard />, label: "Meja Biliar" },
+            { icon: <IconPingPong />, label: "Ping Pong Outdoor" },
+            { icon: <IconBBQ />, label: "Area BBQ" },
+            { icon: <IconGarden />, label: "Taman & Halaman Luas" },
+            { icon: <IconMountain />, label: "Wisata Gunung Penanggungan · ± 15 mnt" },
+          ].map((f, i) => (
+            <div key={i} className="flex items-center gap-2.5">
+              <span className="text-[#B8962E] [&>svg]:w-5 [&>svg]:h-5">{f.icon}</span>
+              <span className="text-[#6B5846] text-xs font-light tracking-wide">{f.label}</span>
             </div>
           ))}
         </div>

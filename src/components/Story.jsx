@@ -1,8 +1,8 @@
-import storyBg from "../assets/hero-gunung.png";
+import storyBg from "../assets/HERO-OMAH.png"; // ganti dengan foto yang sesuai jika ada
 
 export default function Story() {
   return (
-    <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+    <section className="grid grid-cols-1 lg:grid-cols-2">
 
       {/* ── Kiri: Video thumbnail ── */}
       <div

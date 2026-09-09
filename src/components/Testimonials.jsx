@@ -2,17 +2,29 @@ import { useState } from "react";
 import { testimonials } from "../data";
 import { IconStar } from "./Icons";
 
-// ─── GANTI URL foto avatar di bawah ─────────────────────────────────────────
-const avatarImages = [
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80",
-  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&q=80",
-  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&q=80",
-];
-
 function StarRow() {
   return (
     <div className="flex gap-0.5 mb-5">
       {[...Array(5)].map((_, i) => <IconStar key={i} />)}
+    </div>
+  );
+}
+
+// Avatar berbasis inisial nama asli tamu — jujur, bukan foto stok generik (R-18/R-23/R-38)
+function GuestAvatar({ name, size = "md" }) {
+  const initials = name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase();
+
+  const dimension = size === "sm" ? "w-10 h-10" : "w-11 h-11";
+
+  return (
+    <div className={`${dimension} rounded-full bg-[#B8962E]/15 border-2 border-[#B8962E]/30 flex items-center justify-center flex-shrink-0`}>
+      <span className="text-[#B8962E] text-sm font-medium">{initials}</span>
     </div>
   );
 }
@@ -52,11 +64,7 @@ export default function Testimonials() {
                 "{t.text}"
               </p>
               <div className="flex items-center gap-3">
-                <img
-                  src={avatarImages[i]}
-                  alt={t.name}
-                  className="w-11 h-11 rounded-full object-cover flex-shrink-0 border-2 border-[#B8962E]/30"
-                />
+                <GuestAvatar name={t.name} />
                 <div>
                   <p className="text-[#2C1A0E] text-sm font-medium">{t.name}</p>
                   <p className="text-[#6B5846] text-xs font-light">
@@ -87,11 +95,7 @@ export default function Testimonials() {
                   "{t.text}"
                 </p>
                 <div className="flex items-center gap-3">
-                  <img
-                    src={avatarImages[i]}
-                    alt={t.name}
-                    className="w-10 h-10 rounded-full object-cover flex-shrink-0"
-                  />
+                  <GuestAvatar name={t.name} size="sm" />
                   <div>
                     <p className="text-[#2C1A0E] text-sm font-medium">{t.name}</p>
                     <p className="text-[#6B5846] text-xs font-light">

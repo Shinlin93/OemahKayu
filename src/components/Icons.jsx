@@ -50,15 +50,6 @@ export const IconBed = () => (
   </svg>
 );
 
-export const IconBath = () => (
-  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M4 15h20v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-3z" />
-    <path d="M4 15V8a2 2 0 0 1 2-2c1.2 0 2 .9 2 2" />
-    <path d="M6 23v2M20 23v2" />
-    <circle cx="9" cy="7" r="1" />
-  </svg>
-);
-
 export const IconSofa = () => (
   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
     <path d="M5 20v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6" />
@@ -76,15 +67,6 @@ export const IconKitchen = () => (
     <circle cx="14" cy="7.5" r="1.5" />
     <rect x="8" y="15" width="12" height="6" rx="1" />
     <path d="M11 15v6M17 15v6" />
-  </svg>
-);
-
-export const IconTV = () => (
-  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="3" y="5" width="22" height="15" rx="2" />
-    <path d="M9 24h10M14 20v4" />
-    <path d="M8 9l3 3-3 3" strokeWidth="1.2" />
-    <path d="M14 9h6" strokeWidth="1.2" />
   </svg>
 );
 
@@ -122,10 +104,28 @@ export const IconGarden = () => (
   </svg>
 );
 
-export const IconCalendar = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="3" y="5" width="18" height="16" rx="2" />
-    <path d="M16 3v4M8 3v4M3 10h18" />
+export const IconHotWater = () => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M10 4c0 3-3 5-3 8a7 7 0 0 0 14 0c0-3-3-5-3-8" />
+    <path d="M14 4v5" />
+  </svg>
+);
+
+export const IconBilliard = () => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="9" width="24" height="14" rx="2" />
+    <circle cx="10" cy="16" r="2.3" />
+    <circle cx="17" cy="13" r="2.3" />
+    <circle cx="17" cy="19" r="2.3" />
+    <path d="M22 5l3-3" />
+  </svg>
+);
+
+export const IconPingPong = () => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+    <ellipse cx="9" cy="10" rx="6" ry="7" transform="rotate(-25 9 10)" />
+    <path d="M13.5 15.5L19 21" />
+    <circle cx="22" cy="8" r="2" />
   </svg>
 );
 
@@ -172,15 +172,13 @@ export const quickFactIcons = [
 ];
 
 // Icons array untuk Facilities (urutan sesuai data/index.js facilities)
-// facilities: 2 Kamar Tidur, Ruang Keluarga, Dapur Lengkap, TV,
-//             Wi-Fi Cepat, Area BBQ, Parkir Luas, Taman Luas
 export const facilityIcons = [
   <IconBed />,
   <IconSofa />,
   <IconKitchen />,
-  <IconTV />,
-  <IconWifi />,
   <IconBBQ />,
+  <IconWifi />,
   <IconParking />,
   <IconGarden />,
+  <IconHotWater />,
 ];

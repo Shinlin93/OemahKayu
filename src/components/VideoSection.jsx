@@ -1,4 +1,5 @@
 import Video1 from "../assets/Video1.mp4";
+import videoPoster from "../assets/HERO-OMAH.png";
 
 export default function VideoSection() {
   return (
@@ -8,6 +9,7 @@ export default function VideoSection() {
         muted
         loop
         playsInline
+        poster={videoPoster}
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source src={Video1} type="video/mp4" />

@@ -48,7 +48,7 @@ export default function FinalCTA() {
           Hubungi Kami via WhatsApp
         </a>
 
-        <p className="text-[#F5EFE6]/25 text-xs tracking-[0.2em] uppercase mt-6 font-light">
+        <p className="text-[#F5EFE6]/45 text-xs tracking-[0.2em] uppercase mt-6 font-light">
           Ketersediaan terbatas · Pesan sebelum tanggal Anda terambil
         </p>
       </div>
