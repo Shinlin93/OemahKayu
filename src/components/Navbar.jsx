@@ -14,7 +14,14 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-[max(0.75rem,env(safe-area-inset-top))] sm:px-6 sm:pt-4">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-3 rounded-full border border-white/20 bg-[#1a0f07]/75 px-3 py-2.5 text-white shadow-lg backdrop-blur-xl sm:px-5">
+      <nav className="relative mx-auto flex max-w-7xl items-center justify-between gap-3 overflow-hidden rounded-full border border-[#e8dfd3] bg-white px-3 py-2.5 text-[#2C1A0E] shadow-[0_8px_30px_rgba(44,26,14,0.12)] sm:px-5">
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-2 -top-3 size-14 rotate-12 rounded-xl opacity-30"
+          style={{
+            background: "repeating-linear-gradient(8deg, #9a6a3a 0 2px, #d2a36e 2px 5px, #754522 5px 7px, #c28a52 7px 10px)",
+          }}
+        />
         <a
           href="#"
           onClick={(e) => { e.preventDefault(); handleNav("hero"); }}
@@ -25,17 +32,17 @@ export default function Navbar() {
             alt=""
             aria-hidden="true"
             className="size-7 shrink-0 object-contain sm:size-8"
-            style={{ filter: "brightness(0) invert(1)" }}
+            style={{ filter: "brightness(0) saturate(100%)" }}
           />
-          <span className="hidden truncate font-serif-display text-lg sm:block">Oemah Kayu</span>
+          <span className="relative z-10 hidden truncate font-serif-display text-lg text-[#2C1A0E] sm:block">Oemah Kayu</span>
         </a>
 
-        <div className="hidden items-center gap-5 lg:flex">
+        <div className="relative z-10 hidden items-center gap-5 lg:flex">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => handleNav(link.id)}
-              className="whitespace-nowrap border-none bg-transparent py-1 text-[11px] font-medium uppercase tracking-[0.14em] text-white/80 transition-colors hover:text-white"
+              className="whitespace-nowrap border-none bg-transparent py-1 text-[11px] font-medium uppercase tracking-[0.14em] text-[#2C1A0E]/75 transition-colors hover:text-[#2C1A0E]"
             >
               {link.label}
             </button>
@@ -57,7 +64,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? "Tutup menu" : "Buka menu"}
             aria-expanded={menuOpen}
-            className="flex items-center justify-center rounded-full border border-white/20 bg-white/10 p-2 text-white lg:hidden"
+            className="relative z-10 flex items-center justify-center rounded-full border border-[#e8dfd3] bg-[#f8f4ee] p-2 text-[#2C1A0E] lg:hidden"
           >
             {menuOpen ? <IconClose /> : <IconMenu />}
           </button>
@@ -65,12 +72,12 @@ export default function Navbar() {
       </nav>
 
       <div className={`mx-auto max-w-7xl overflow-hidden transition-all duration-300 lg:hidden ${menuOpen ? "max-h-96 pt-2 opacity-100" : "max-h-0 opacity-0"}`}>
-        <div className="flex flex-col gap-1 rounded-2xl border border-white/20 bg-[#1a0f07]/90 p-3 shadow-lg backdrop-blur-xl">
+        <div className="flex flex-col gap-1 rounded-2xl border border-[#e8dfd3] bg-white p-3 text-[#2C1A0E] shadow-[0_8px_30px_rgba(44,26,14,0.12)]">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => handleNav(link.id)}
-              className="border-b border-white/10 bg-transparent py-3 text-left text-xs font-medium uppercase tracking-[0.14em] text-white/80 last:border-b-0 hover:text-white"
+              className="border-b border-[#e8dfd3] bg-transparent py-3 text-left text-xs font-medium uppercase tracking-[0.14em] text-[#2C1A0E]/75 last:border-b-0 hover:text-[#2C1A0E]"
             >
               {link.label}
             </button>
