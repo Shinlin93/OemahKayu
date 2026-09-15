@@ -22,22 +22,7 @@ export default function Navbar() {
             background: "repeating-linear-gradient(8deg, #9a6a3a 0 2px, #d2a36e 2px 5px, #754522 5px 7px, #c28a52 7px 10px)",
           }}
         />
-        <a
-          href="#"
-          onClick={(e) => { e.preventDefault(); handleNav("hero"); }}
-          className="flex min-w-0 items-center gap-2"
-        >
-          <img
-            src="/logo-icon.png"
-            alt=""
-            aria-hidden="true"
-            className="size-7 shrink-0 object-contain sm:size-8"
-            style={{ filter: "brightness(0) saturate(100%)" }}
-          />
-          <span className="relative z-10 hidden truncate font-serif-display text-lg text-[#2C1A0E] sm:block">Oemah Kayu</span>
-        </a>
-
-        <div className="relative z-10 hidden items-center gap-5 lg:flex">
+        <div className="relative z-10 hidden flex-1 items-center justify-center gap-5 lg:flex">
           {navLinks.map((link) => (
             <button
               key={link.id}
