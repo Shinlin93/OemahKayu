@@ -163,6 +163,7 @@ export const IconChevron = () => (
 );
 
 // Icons array untuk QuickFacts (urutan sesuai data/index.js quickFacts)
+// eslint-disable-next-line react-refresh/only-export-components
 export const quickFactIcons = [
   <IconCapacity />,
   <IconPool />,
@@ -172,6 +173,7 @@ export const quickFactIcons = [
 ];
 
 // Icons array untuk Facilities (urutan sesuai data/index.js facilities)
+// eslint-disable-next-line react-refresh/only-export-components
 export const facilityIcons = [
   <IconBed />,
   <IconSofa />,

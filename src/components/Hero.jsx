@@ -74,14 +74,14 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/5 to-black/35" />
 
       {/* ── Konten ── */}
-      <div className="relative z-10 min-h-screen flex flex-col justify-between px-6 sm:px-10 lg:px-14 pt-24 pb-10">
+      <div className="relative z-10 min-h-[100svh] flex flex-col justify-between px-4 sm:px-10 lg:px-14 pt-24 pb-[max(2rem,env(safe-area-inset-bottom))]">
 
         {/* Baris atas — kosong, navbar sudah fixed terpisah di atasnya */}
         <div />
 
         {/* Baris tengah — paragraf deskripsi, rata kanan seperti referensi */}
         <div className="flex justify-end">
-          <div className="max-w-sm sm:max-w-md text-right sm:text-left">
+          <div className="w-full max-w-sm sm:max-w-md text-right sm:text-left">
             <p
               className="text-white font-light"
               style={{ lineHeight: 1.85, fontSize: "0.95rem" }}
@@ -96,7 +96,7 @@ export default function Hero() {
               href={WA_URL}
               target="_blank"
               rel="noopener"
-              className="inline-flex items-center gap-2.5 mt-7 bg-white/95 text-[#2C1A0E] px-6 py-3.5 text-xs tracking-[0.15em] uppercase font-medium hover:bg-white transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2.5 mt-7 bg-white/95 text-[#2C1A0E] px-5 sm:px-6 py-3.5 text-[11px] sm:text-xs tracking-[0.12em] sm:tracking-[0.15em] uppercase font-medium hover:bg-white transition-all duration-300 min-h-12 max-w-full"
             >
               <span className="text-sm">↘</span>
               Cek Ketersediaan

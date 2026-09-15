@@ -37,7 +37,7 @@ export default function Navbar() {
       <a
         href="#"
         onClick={(e) => { e.preventDefault(); handleNav("hero"); }}
-        className="fixed top-5 left-5 sm:top-6 sm:left-6 z-50 flex items-center gap-2.5"
+        className="fixed top-[max(1rem,env(safe-area-inset-top))] left-[max(1rem,env(safe-area-inset-left))] sm:top-6 sm:left-6 z-50 flex items-center gap-2.5 max-w-[42vw]"
         style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.45))" }}
       >
         <img
@@ -60,7 +60,7 @@ export default function Navbar() {
         href={WA_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed top-5 right-5 sm:top-6 sm:right-6 z-50 inline-flex items-center gap-2 bg-white text-[#2C1A0E] px-4 sm:px-5 py-2.5 rounded-full text-[13px] font-medium hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-200 shadow-lg"
+        className="fixed top-[max(1rem,env(safe-area-inset-top))] right-[max(1rem,env(safe-area-inset-right))] sm:top-6 sm:right-6 z-50 inline-flex items-center gap-2 bg-white text-[#2C1A0E] px-3.5 sm:px-5 py-2.5 rounded-full text-[12px] sm:text-[13px] font-medium hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-200 shadow-lg whitespace-nowrap"
       >
         <IconWhatsApp />
         <span className="hidden sm:inline uppercase tracking-[0.08em]">Booking</span>
