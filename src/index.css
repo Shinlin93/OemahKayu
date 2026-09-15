@@ -2,6 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap');
 @import "tailwindcss";
 
+/* ── NOT A HOTEL-inspired foundation ─────────────────────────────────────── */
+:root {
+  --ink: #0b0b0d;
+  --blue: #0171e3;
+  --paper: #ffffff;
+  --muted: #eceeed;
+  --line: #e9e9eb;
+  --gutter: 24px;
+}
+
 /* ── Responsive foundation ───────────────────────────────────────────────── */
 :root {
   color-scheme: light;
@@ -35,7 +45,17 @@ button, a {
 
 /* ── Font utility class ──────────────────────────────────────────────────── */
 .font-serif-display {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-stretch: condensed;
+  letter-spacing: -0.04em;
+}
+
+h1, h2, h3, h4, button, a {
+  font-feature-settings: "palt";
+}
+
+button, a {
+  min-height: 44px;
 }
 
 /* ── Scroll reveal ───────────────────────────────────────────────────────── */
