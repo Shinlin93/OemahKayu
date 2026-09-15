@@ -44,9 +44,9 @@ export default function OemahKayuLanding() {
     <div
       className="overflow-x-hidden"
       style={{
-        fontFamily: "'Jost', sans-serif",
-        background: "#F5EFE6",
-        color: "#2C1A0E",
+        fontFamily: 'Inter, "Helvetica Neue", Helvetica, Arial, sans-serif',
+        background: "#0b0b0d",
+        color: "#ffffff",
       }}
     >
       <Navbar />

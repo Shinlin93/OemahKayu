@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-[max(0.75rem,env(safe-area-inset-top))] sm:px-6 sm:pt-4">
-      <nav className="relative mx-auto flex max-w-7xl items-center justify-between gap-3 overflow-hidden rounded-full border border-[#e8dfd3] bg-white px-3 py-2.5 text-[#2C1A0E] shadow-[0_8px_30px_rgba(44,26,14,0.12)] sm:px-5">
+      <nav className="relative mx-auto flex w-fit max-w-7xl items-center justify-end gap-3 overflow-hidden rounded-full border border-white/20 bg-white/80 px-3 py-2.5 text-black backdrop-blur-xl lg:w-full sm:px-5">
         <span
           aria-hidden="true"
           className="pointer-events-none absolute -right-2 -top-3 size-14 rotate-12 rounded-xl opacity-30"
