@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { IconMenu, IconClose, IconWhatsApp } from "./Icons";
+import { IconMenu, IconClose } from "./Icons";
 import { navLinks } from "../data";
-import { WA_URL } from "../constants";
 import { scrollToSection } from "../hooks";
 
 export default function Navbar() {
@@ -22,21 +21,6 @@ export default function Navbar() {
             background: "repeating-linear-gradient(8deg, #9a6a3a 0 2px, #d2a36e 2px 5px, #754522 5px 7px, #c28a52 7px 10px)",
           }}
         />
-        <a
-          href="#"
-          onClick={(e) => { e.preventDefault(); handleNav("hero"); }}
-          className="flex min-w-0 items-center gap-2"
-        >
-          <img
-            src="/logo-icon.png"
-            alt=""
-            aria-hidden="true"
-            className="size-7 shrink-0 object-contain sm:size-8"
-            style={{ filter: "brightness(0) saturate(100%)" }}
-          />
-          <span className="relative z-10 hidden truncate font-serif-display text-lg text-[#2C1A0E] sm:block">Oemah Kayu</span>
-        </a>
-
         <div className="relative z-10 hidden items-center gap-5 lg:flex">
           {navLinks.map((link) => (
             <button
@@ -50,16 +34,6 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
-          <a
-            href={WA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-white px-3 py-2 text-[11px] font-medium uppercase tracking-[0.06em] text-[#2C1A0E] transition-colors hover:bg-white/90 sm:px-4 sm:text-[12px]"
-          >
-            <IconWhatsApp />
-            <span className="hidden sm:inline">Booking</span>
-          </a>
-
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? "Tutup menu" : "Buka menu"}
