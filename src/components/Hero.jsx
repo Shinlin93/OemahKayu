@@ -96,7 +96,7 @@ export default function Hero() {
               href={WA_URL}
               target="_blank"
               rel="noopener"
-              className="inline-flex min-h-12 max-w-full items-center justify-center gap-2.5 rounded-full bg-[#0171e3] px-5 py-3.5 text-[11px] font-medium uppercase tracking-[0.12em] text-white transition-all duration-300 hover:bg-[#0b83ff] sm:px-6 sm:text-xs sm:tracking-[0.15em]"
+              className="inline-flex items-center justify-center gap-2.5 mt-7 bg-white/95 text-[#2C1A0E] px-5 sm:px-6 py-3.5 text-[11px] sm:text-xs tracking-[0.12em] sm:tracking-[0.15em] uppercase font-medium hover:bg-white transition-all duration-300 min-h-12 max-w-full"
             >
               <span className="text-sm">↘</span>
               Cek Ketersediaan
