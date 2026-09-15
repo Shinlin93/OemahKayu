@@ -3,7 +3,7 @@ import { quickFactIcons } from "./Icons";
 
 export default function QuickFacts() {
   return (
-    <section className="bg-[#2C1A0E] py-8">
+    <section id="quick-facts" className="bg-[#2C1A0E] py-8">
       <div className="max-w-5xl mx-auto px-6">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-px bg-[#F5EFE6]/5">
           {quickFacts.map((f, i) => (

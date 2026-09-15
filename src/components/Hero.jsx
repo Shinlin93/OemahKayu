@@ -104,9 +104,20 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Baris bawah — jam live kiri, dot indicator kanan */}
-        <div className="flex items-end justify-between">
+        {/* Baris bawah — jam live, tombol scroll, dot indicator */}
+        <div className="flex items-end justify-between gap-4">
           <LiveClock />
+
+          <a
+            href="#quick-facts"
+            aria-label="Scroll ke informasi villa"
+            className="group absolute left-1/2 bottom-8 -translate-x-1/2 flex flex-col items-center gap-2 text-white/80 transition-colors duration-300 hover:text-white"
+          >
+            <span className="text-[10px] tracking-[0.24em] uppercase">Scroll ke bawah</span>
+            <span className="flex size-10 items-center justify-center rounded-full border border-white/45 transition-transform duration-300 group-hover:translate-y-1">
+              <span aria-hidden="true" className="text-lg leading-none">↓</span>
+            </span>
+          </a>
 
           {heroImages.length > 1 && (
             <div className="flex gap-2">
