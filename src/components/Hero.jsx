@@ -79,12 +79,16 @@ export default function Hero() {
         {/* Baris atas — kosong, navbar sudah fixed terpisah di atasnya */}
         <div />
 
-        {/* Baris tengah — paragraf deskripsi, rata kanan seperti referensi */}
-        <div className="flex justify-end">
-          <div className="max-w-sm sm:max-w-md text-right sm:text-left">
+        {/* Architectural statement and action */}
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="font-ui mb-3 text-[11px] uppercase tracking-[0.24em] text-white/70">Oemah Kayu · Prigen</p>
+            <h1 className="font-display max-w-3xl text-[clamp(4.5rem,12vw,9rem)] leading-[0.82] text-white">NATURE<br />WITHIN</h1>
+          </div>
+          <div className="max-w-sm sm:pb-1">
             <p
-              className="text-white font-light"
-              style={{ lineHeight: 1.85, fontSize: "0.95rem" }}
+              className="text-white/90 font-light"
+              style={{ lineHeight: 1.65, fontSize: "0.95rem" }}
             >
               Rumah kayu Jawa yang kami bangun dengan hati, menghadirkan
               kolam renang pribadi, udara pegunungan yang sejuk, dan
@@ -96,7 +100,7 @@ export default function Hero() {
               href={WA_URL}
               target="_blank"
               rel="noopener"
-              className="inline-flex items-center gap-2.5 mt-7 bg-white/95 text-[#2C1A0E] px-6 py-3.5 text-xs tracking-[0.15em] uppercase font-medium hover:bg-white transition-all duration-300"
+              className="inline-flex items-center gap-2.5 mt-7 rounded-full bg-[#0171e3] text-white px-6 py-3.5 text-xs tracking-[0.12em] uppercase font-medium hover:bg-[#1984ed] transition-colors duration-300"
             >
               <span className="text-sm">↘</span>
               Cek Ketersediaan
