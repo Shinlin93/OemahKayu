@@ -29,7 +29,7 @@ export default function OemahKayuLanding() {
     <main>
       <header className="nav-wrap">
         <nav className="nav" aria-label="Main navigation">
-          <a className="brand" href="#top" aria-label="Oemah Kayu home"><span>Oemah</span> Kayu</a>
+          <a className="brand" href="#top" aria-label="Oemah Kayu home"><img className="brand-logo" src="/logo.png" alt="Oemah Kayu Penanggungan" /></a>
           <div className={`nav-links ${menuOpen ? "open" : ""}`}>
             <a href="#story" onClick={() => setMenuOpen(false)}>The story</a>
             <a href="#house" onClick={() => setMenuOpen(false)}>The house</a>
@@ -46,7 +46,7 @@ export default function OemahKayuLanding() {
         <img className="hero-image" src="/src/assets/hero-depan.webp" alt="Oemah Kayu, a wooden retreat in the green highlands" />
         <div className="hero-shade" />
         <div className="hero-content">
-          <p className="eyebrow light">Private wooden retreat · Cisarua, Bogor</p>
+          <p className="eyebrow light">Private wooden retreat · Prigen, Pasuruan</p>
           <h1>A place to<br /><em>slow down.</em></h1>
           <p className="hero-copy">A warm wooden home tucked into the green hills. Come for the quiet, stay for the moments together.</p>
           <a className="button button-light" href="#story">Explore Oemah Kayu <Arrow /></a>
@@ -73,11 +73,11 @@ export default function OemahKayuLanding() {
 
       <section className="facts"><div className="facts-inner"><SectionLabel>05 — Good to know</SectionLabel><div className="facts-grid"><div><strong>Wooden</strong><span>retreat</span></div><div><strong>Green</strong><span>surroundings</span></div><div><strong>Made for</strong><span>togetherness</span></div><a href={whatsapp} className="facts-action">Ask about your stay <Arrow /></a></div></div></section>
 
-      <section className="visit section-pad" id="visit"><div className="visit-copy"><SectionLabel>06 — Find your way</SectionLabel><h2>Close enough<br /><em>to get away.</em></h2><p>Oemah Kayu is in Cisarua, Bogor — a refreshing escape from the city, surrounded by the landscapes of West Java.</p><a className="button button-dark" href={whatsapp}>Plan your visit <Arrow /></a></div><div className="map-card"><img src="/src/assets/Ke-Villa.webp" alt="The road leading to Oemah Kayu" /><div className="map-overlay"><span>OEMAH KAYU</span><strong>Cisarua, Bogor</strong><small>West Java, Indonesia</small></div></div></section>
+      <section className="visit section-pad" id="visit"><div className="visit-copy"><SectionLabel>06 — Find your way</SectionLabel><h2>Close enough<br /><em>to get away.</em></h2><p>Oemah Kayu is in Prigen, Pasuruan, East Java — a refreshing escape near the slopes of Mount Penanggungan, surrounded by cool mountain air and green landscapes.</p><a className="button button-dark" href={whatsapp}>Plan your visit <Arrow /></a></div><div className="map-card"><img src="/src/assets/Ke-Villa.webp" alt="The road leading to Oemah Kayu" /><div className="map-overlay"><span>OEMAH KAYU</span><strong>Prigen, Pasuruan</strong><small>East Java, Indonesia</small></div></div></section>
 
       <section className="final-cta"><img src="/src/assets/Depan-Malam.webp" alt="Oemah Kayu glowing warmly at night" /><div className="final-shade" /><div className="final-content"><SectionLabel>Come as you are</SectionLabel><h2>Ready to find<br /><em>your quiet?</em></h2><a className="button button-light" href={whatsapp}>Chat via WhatsApp <Arrow /></a></div></section>
 
-      <footer><a className="brand" href="#top"><span>Oemah</span> Kayu</a><p>Private wooden retreat<br />Cisarua, Bogor · Indonesia</p><div><a href="#house">The house</a><a href="#gallery">Gallery</a><a href={whatsapp}>WhatsApp</a></div><small>© {new Date().getFullYear()} Oemah Kayu</small></footer>
+      <footer><a className="brand" href="#top"><span>Oemah</span> Kayu</a><p>Private wooden retreat<br />Prigen, Pasuruan · East Java, Indonesia</p><div><a href="#house">The house</a><a href="#gallery">Gallery</a><a href={whatsapp}>WhatsApp</a></div><small>© {new Date().getFullYear()} Oemah Kayu</small></footer>
 
       {lightbox && <div className="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" onClick={() => setLightbox(null)}><button aria-label="Close image preview" onClick={() => setLightbox(null)}>×</button><img src={lightbox.src} alt={lightbox.alt} onClick={(event) => event.stopPropagation()} /></div>}
       <a className="sticky-wa" href={whatsapp} aria-label="Chat with Oemah Kayu on WhatsApp">WhatsApp <Arrow /></a>
