@@ -6,4 +6,4 @@
 
 @media(max-width:800px){.surroundings-heading{display:block;margin-bottom:42px}.surroundings-heading p{margin-top:25px}.surroundings-grid{grid-template-columns:1fr;gap:42px}.surroundings-grid img{height:280px}.gallery-grid{min-height:0}}
 
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gallery-item img{transition:none}}
+.visit-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap}.map-link{font-size:12px;border-bottom:1px solid currentColor;padding-bottom:5px}.map-card iframe{width:100%;height:100%;display:block;border:0}.map-card .map-overlay{pointer-events:none}@media(max-width:800px){.visit-actions{align-items:flex-start;flex-direction:column;gap:18px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gallery-item img{transition:none}}
