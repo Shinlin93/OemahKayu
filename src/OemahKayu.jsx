@@ -10,7 +10,7 @@ const photos = [
   { src: "/assets/pingpong.webp", alt: "Table tennis area" },
 ]
 
-const whatsapp = "https://wa.me/6285155266669?text=Halo%20Oemah%20Kayu,%20saya%20ingin%20menanyakan%20ketersediaan%20villa."
+const whatsapp = "https://wa.me/6289677809007?text=Halo%20Oemah%20Kayu,%20saya%20ingin%20menanyakan%20ketersediaan%20villa."
 
 function Arrow() { return <span aria-hidden="true">↗</span> }
 function SectionLabel({ children }) { return <p className="section-label"><span />{children}</p> }
