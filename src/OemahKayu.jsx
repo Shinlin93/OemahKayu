@@ -18,12 +18,24 @@ function SectionLabel({ children }) { return <p className="section-label"><span 
 export default function OemahKayuLanding() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [lightbox, setLightbox] = useState(null)
+  const [heroSlide, setHeroSlide] = useState(0)
+  const heroSlides = [
+    { src: "/assets/hero-depan.webp", alt: "Oemah Kayu, a wooden retreat in the green highlands", eyebrow: "Private wooden retreat · Prigen, Pasuruan", title: <>A place to<br /><em>slow down.</em></>, copy: "A warm wooden home tucked into the green hills. Come for the quiet, stay for the moments together." },
+    { src: "/assets/hero-belakang.jpeg", alt: "Oemah Kayu pavilion with Mount Penanggungan in the background", eyebrow: "A quiet garden · Mount Penanggungan", title: <>Make room<br /><em>for wonder.</em></>, copy: "Open skies, warm wood, and a garden made for gathering beneath the mountain air." },
+  ]
 
   useEffect(() => {
     const onKey = (event) => event.key === "Escape" && setLightbox(null)
     window.addEventListener("keydown", onKey)
     return () => window.removeEventListener("keydown", onKey)
   }, [])
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setHeroSlide((current) => (current + 1) % heroSlides.length), 6500)
+    return () => window.clearInterval(timer)
+  }, [heroSlides.length])
+
+  const activeHero = heroSlides[heroSlide]
 
   return (
     <main>
@@ -43,15 +55,15 @@ export default function OemahKayuLanding() {
       </header>
 
       <section className="hero" id="top">
-        <img className="hero-image" src="/assets/hero-depan.webp" alt="Oemah Kayu, a wooden retreat in the green highlands" />
+        {heroSlides.map((slide, index) => <img key={slide.src} className={`hero-image ${index === heroSlide ? "active" : ""}`} src={slide.src} alt={slide.alt} aria-hidden={index !== heroSlide} />)}
         <div className="hero-shade" />
         <div className="hero-content">
-          <p className="eyebrow light">Private wooden retreat · Prigen, Pasuruan</p>
-          <h1>A place to<br /><em>slow down.</em></h1>
-          <p className="hero-copy">A warm wooden home tucked into the green hills. Come for the quiet, stay for the moments together.</p>
+          <p className="eyebrow light">{activeHero.eyebrow}</p>
+          <h1>{activeHero.title}</h1>
+          <p className="hero-copy">{activeHero.copy}</p>
           <a className="button button-light" href="#story">Explore Oemah Kayu <Arrow /></a>
         </div>
-        <div className="hero-meta"><span>06°41&apos;S / 106°57&apos;E</span><span>Scroll to wander ↓</span></div>
+        <div className="hero-meta"><span>06°41&apos;S / 106°57&apos;E</span><span>Scroll to wander ↓</span><div className="hero-dots" aria-label="Hero slides">{heroSlides.map((slide, index) => <button key={slide.src} className={index === heroSlide ? "active" : ""} onClick={() => setHeroSlide(index)} aria-label={`Show hero slide ${index + 1}`} />)}</div></div>
       </section>
 
       <section className="intro section-pad" id="story">
